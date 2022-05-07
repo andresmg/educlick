@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="322.664" height="293.497" viewBox="0 0 322.664 293.497">
+  <g id="Group_2" data-name="Group 2" transform="translate(-579.53 -156)">
+    <g id="Rectangle_Copy_5" data-name="Rectangle Copy 5" transform="translate(579.53 156)" fill="none" stroke-miterlimit="10">
+      <path d="M0,0H322.664V293.5L0,95.087V0Z" stroke="none"/>
+      <path d="M 8.550018310546875 8.549957275390625 L 8.550018310546875 90.30763244628906 L 314.1138916015625 278.2019348144531 L 314.1138916015625 8.549957275390625 L 8.550018310546875 8.549957275390625 M 3.0517578125e-05 -3.0517578125e-05 L 322.6638793945312 -3.0517578125e-05 L 322.6638793945312 293.4965209960938 L 3.0517578125e-05 95.0872802734375 L 3.0517578125e-05 -3.0517578125e-05 Z" stroke="none" fill="#2baae1"/>
+    </g>
+    <circle id="Oval_Copy" data-name="Oval Copy" cx="97.528" cy="97.528" r="97.528" transform="translate(629.661 232.564)" fill="#fff"/>
+    <text id="WRS" transform="translate(634.714 278.138)" fill="#2baae1" font-size="82" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="79">WRS</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,188 @@
+.Banner {
+    background-color: $zane_black;
+    color: $zane_white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 0;
+    height: 18rem;
+
+    h1 {
+        font-size: 5rem;
+        color: $zane_blue_light;
+    }
+
+    h3 {
+        color: $zane_blue_light;
+    }
+}
+
+.Main {
+    &__Pds {
+    height: calc(100vh - 36rem);
+
+    [class*="col"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__cards {
+        width: 36rem;
+        height: 24rem;
+        border: solid 0.4rem $zane_blue_light;
+        position: relative;
+        text-align: center;
+        font-size: 2.8rem;
+        padding-top: 12rem;
+        margin-top: 4rem;
+        text-decoration: none;
+        color: $zane_text;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $zane_blue_light;
+            border-color: $zane_blue_light;
+
+            .icons {
+                top:55%;
+                
+                &__book {
+                    background: $zane_blue_light url(../assets/book_white.svg) no-repeat center / 12rem;
+                }
+    
+                &__dollar {
+                    background: $zane_blue_light url(../assets/dollar_white.svg) no-repeat center / 12rem;
+                }
+            }
+
+            &:before {
+                top: 0;
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5rem;
+            height: 10rem;
+            top: 50%;
+            margin-top: -5rem;
+            left: 50%;
+            margin-left: 16rem;
+            background: $zane_white;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .icons {
+            width: 18rem;
+            height: 18rem;
+            position: absolute;
+            left: 50%;
+            margin-left: -9rem;
+            top: 50%;
+            margin-top: -20rem;
+            font-size: 2.8rem;
+            transition: all 0.3s ease-in-out;
+
+            &__book {
+                background: $zane_blue_light url(../assets/book.svg) no-repeat center / 12rem;
+
+                &.blue {
+                    background: $zane_blue url(../assets/book.svg) no-repeat center / 12rem;
+                }
+            }
+
+            &__dollar {
+                background: $zane_blue_light url(../assets/dollar.svg) no-repeat center / 12rem;
+
+                &.blue {
+                    background: $zane_blue url(../assets/dollar.svg) no-repeat center / 12rem;
+                }
+            }
+        }
+
+        &.blue {
+            border-color: $zane-blue;
+
+            &:hover {
+                color: $zane-blue;
+
+                .icons {
+                    
+                    &__book {
+                        background: $zane_blue url(../assets/book_white.svg) no-repeat center / 12rem;
+                    }
+        
+                    &__dollar {
+                        background: $zane_blue url(../assets/dollar_white.svg) no-repeat center / 12rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .Cta {
+        transition: all 0.3s ease-in-out;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: $zane_text;
+        position: relative;
+
+        &:hover {
+            color: $zane_yellow;
+
+            &:before {
+                background: url(../assets/bulb_yellow.svg) no-repeat center / contain;
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            margin-left: -4rem;
+            width: 8rem;
+            height: 8rem;
+            top: -9rem;
+            background: url(../assets/bulb.svg) no-repeat center / contain;
+            transition: all 0.3s ease-in-out;
+        }
+     }
+
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Pds {
+        height: unset;
+        margin-top: 4rem;
+
+        &__cards {
+            margin-top: 8rem;
+    
+            &:before {
+                width: 2rem;
+            }
+    
+            .icons {
+                top: 65%;
+            }
+        }
+    
+        .Cta {
+            margin-top: 15rem;
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 6rem;
+         }
+
+        }
+    }
+}

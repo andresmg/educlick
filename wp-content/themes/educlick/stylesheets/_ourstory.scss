@@ -1,0 +1,162 @@
+
+
+.Main {
+    overflow: hidden;
+
+    &__OurStory {
+        height: calc(100vh - 12rem);
+        display: flex;
+        align-items: center;
+
+        &__info {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            h1 {
+                margin-bottom: 4rem;
+            }
+        }
+
+        &__Timeline {
+            border-top: solid 0.1rem rgba($zane_text, 0.3);
+            margin-top: 4rem;
+            padding-top: 5rem;
+            justify-content: space-between;
+
+            [class*='col'] {
+                text-align: center;
+                font-size: 1.4rem;
+
+                &.blue1 {
+                    h4 {
+                        color: $zane_blue_light;
+                            &:before {
+                                background: $zane_blue_light;
+                            }
+                    }
+                }
+
+                &.blue2 {
+                    h4 {
+                        color: $zane_blue;
+                        &:before {
+                            background: $zane_blue;
+                        }
+                    }
+                }
+
+                &.blue3 {
+                    h4 {
+                        color: $zane_blue_dark;
+                        &:before {
+                            background: $zane_blue_dark;
+                        }
+                    }
+                }
+
+                &.blue4 {
+                    h4 {
+                        color: #0B6386;
+                        &:before {
+                            background: #0B6386;
+                        }
+                    }
+                }
+
+                h4 {
+                    font-size: 1.8rem;
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: -6.5rem;
+                        left: 50%;
+                        width: 3rem;
+                        height: 3rem;
+                        margin-left: -1.5rem;
+                    }
+                }
+            }
+        }
+
+        &__blocks {
+            height: calc(100vh - 12rem);
+            display: block;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                height: calc(100vh - 12rem);
+                width: 300%;
+                right: -30rem;
+                background: $zane_black;
+                z-index: -1;
+                background: url(../assets/story_bg.svg) no-repeat center / cover;
+            }
+
+            .block {
+                width: 30rem;
+                height: 30rem;
+                margin-right: 0rem;
+
+                &:nth-child(1) {
+                    margin-bottom: 4rem;
+                }
+
+                &.blue {
+                    background: url(../assets/story_top.jpg) no-repeat center center / cover;
+                }
+
+                &.dark {
+                    background: url(../assets/story_bttm.jpg) no-repeat center center / cover;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__OurStory {
+        height: unset;
+        padding: 4rem;
+        padding-bottom: 0;
+
+            &__Timeline {
+                border-top: 0;
+                border-left: solid 0.1rem rgba($zane_text, 0.3);
+                padding-top: 0;
+                justify-content: space-between;
+                    margin-top: 4rem;
+
+                [class*='col'] {
+                    text-align: left;
+                    font-size: 1.4rem;
+                    padding-left: 2.8rem;
+                    margin-bottom: 3rem;
+
+                    h4 {
+                        &::before {
+                            top: 0;
+                            left: -2.2rem;
+                            margin-left: -2.2rem;
+                        }
+                    }
+                }
+            }
+
+            &__blocks {
+                display: none;
+            }
+        }
+    }
+}

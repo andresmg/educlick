@@ -1,0 +1,164 @@
+.Main {
+    &__Home {
+    height: calc(100vh - 12rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+        &__card {
+            height: 22rem;
+            position: relative;
+            text-decoration: none;
+            color: $zane_text;
+            margin-bottom: 2rem;
+
+            &.pds {
+                background: url(../assets/home_pds.svg) no-repeat center top / 17rem;
+                &:hover {
+                    color: #88d3f3;
+                }
+            }
+
+            &.wrs {
+                background: url(../assets/home_wrs.svg) no-repeat center top / 17rem;
+                &:hover {
+                    color: #2baae1;
+                }
+            }
+
+            &.vce {
+                background: url(../assets/home_vce.svg) no-repeat center top / 17rem;
+                &:hover {
+                    color: #0b6386;
+                }
+            }
+
+            &.pd {
+                background: url(../assets/home_pd.svg) no-repeat center top / 17rem;
+                &:hover {
+                    color: #0483b6;
+                }
+            }
+
+            span {
+                position: absolute;
+                bottom: 2rem;
+                left: 8rem;
+            }
+
+            &:hover {
+                background-size: 18rem;
+                transition: all 0.3s ease-in-out !important;
+            }
+        }
+
+        .Brochure {
+            border-top: solid 0.1rem $zane_blue;
+            margin-top: 2rem;
+            font-size: 1.6rem;
+
+            img {
+                margin-right: 2rem;
+                margin-top: 4rem;
+                width: 7rem;
+            }
+
+            h1 {
+                color: $zane_blue;
+                font-size: 3rem;
+                margin-top: 3rem;
+            }
+            a {
+                text-decoration: none;
+                color: $zane_text;
+            }
+        }
+
+        .Video {
+            height: calc(100vh - 12rem);
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding: 0;
+
+            &__player {
+            // background: url(../assets/video-bg.jpg) no-repeat center / contain;
+            height: calc(100vh - 12rem);
+            width: 100%;
+            position: absolute;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+                &__video {
+                    width: 100%;
+                }
+            }
+
+            .background {
+                position: absolute;
+                height: calc(100vh - 9rem);
+                background: url(../assets/home-bg.svg) no-repeat center left / cover;
+                width: 80%;
+                right: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Home {
+        height: unset;
+        margin-top: 4rem;
+
+            .Video {
+                height: unset;
+                position: static;
+                padding: 0;
+                
+                &__player {
+                    height: unset;
+                    position: static;
+                    background-size: cover;
+                    height: 30rem;
+                    }
+            
+                    .background {
+                        height: unset;
+                        position: static;
+                    }
+            }
+
+            &__card {
+                height: 22rem;
+                background-size: 14rem !important;
+                background-position: top center !important;
+            }
+
+            .Rws {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .Brochure {
+                border-bottom: solid 0.1rem $zane_blue;
+                padding-bottom: 4rem;
+
+                img {
+                    width: 6rem;
+                }
+        
+                h1 {
+                    font-size: 3rem;
+                }
+
+                p {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}

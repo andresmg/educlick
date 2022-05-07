@@ -1,0 +1,131 @@
+.Main {
+    &__Vce {
+    height: calc(100vh - 12rem);
+    display: flex;
+    align-items: center;
+
+        &__info {
+            h1 {
+                margin-bottom: 3rem;
+            }
+
+            h3 {
+                text-transform: uppercase;
+                margin: 4rem 0 2rem 0;
+                font-size: 2rem;
+            }
+        }
+
+        &__Table {
+            margin-top: 4rem;
+        
+            &__Head {
+                background: $zane_blue_dark;
+                color: $zane_white;
+                padding: 2rem;
+            }
+
+            &__Body {
+                background: $zane_blue_light;
+                color: $zane_text;
+                padding: 2rem;
+
+                ul {
+                    padding: 0;
+                    list-style: none;
+
+                    li {
+                        margin-bottom: 1rem;
+
+                        &:before {
+                            content: '';
+                            display: inline-block;
+                            width: 1.4rem;
+                            height: 1.4rem;
+                            background: url(../assets/check.svg) no-repeat center / contain;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__icon {
+            text-align: center;
+            text-decoration: none;
+            color: $zane_text;
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 7rem;
+                height: 7rem;
+                margin-bottom: 2rem;
+                transition: all 0.3s ease-in-out;
+            }
+
+            h6 {
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                text-align: center;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        &__Video {
+            height: 80%;
+            background: url(../assets/vce_bg.svg) no-repeat left top / contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .background {
+                position: absolute;
+                height: 80%;
+                width: 50%;
+                background: url(../assets/vce_bbg.jpg) no-repeat center / cover;
+                z-index: 1;
+                content: '';
+                display: block;
+                top: 50%;
+                left: 50%;
+                margin-left: -25%;
+                margin-top: -40%;
+            }
+        }
+    
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Vce {
+        height: unset;
+        margin-top: 4rem;
+
+            &__info {
+                padding: 2rem;
+            }
+
+            &__icons {
+                margin: 4rem 0;
+            }
+
+            &__icon {
+                margin-bottom: 4rem;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            &__Video {
+                height: 30rem;
+                margin-bottom: 4rem;
+                border-radius: 0;
+            }
+        }
+    }
+}

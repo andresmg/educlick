@@ -1,0 +1,301 @@
+@import 'variables';
+@import 'fonts';
+@import 'home';
+@import 'pds';
+@import 'pd';
+@import 'vce';
+@import 'wrs';
+@import 'resources';
+@import 'includes';
+@import 'ourstory';
+@import 'terms';
+@import 'contact';
+
+html {
+    font-size: 10px;
+}
+
+.icon {
+
+    &.light {
+        h6 {
+            color: $zane_blue_light;
+        }
+
+        &:before {
+            background: url(../assets/download_light.svg) no-repeat center center / 6rem;
+        }
+
+        &:after {
+            color: $zane_blue_light;
+        }
+    }
+
+    &.dark {
+        h6 {
+            color: $zane_blue_dark;
+        }
+
+        &:before {
+            background: url(../assets/download_dark.svg) no-repeat center center / 6rem;
+        }
+
+        &:after {
+            color: $zane_blue_dark;
+        }
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../assets/download_blue.svg) no-repeat center center / 6rem;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+    }
+
+    &:after {
+        content: 'Donwload PDF';
+        display: block;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $zane_blue;
+    }
+
+    &:hover {
+
+        &:after {
+            opacity: 1;
+            bottom: 0rem;
+        }
+
+        &::before {
+            opacity: 1;
+        }
+
+        img {
+            margin-top: -12rem;
+        }
+
+        h6 {
+            opacity: 0;
+        }
+    }
+}
+
+.Button {
+    background: $zane_blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $zane_white;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: $zane_blue_dark;
+        color: $zane_white;
+    }
+}
+
+.btn {
+    background: $zane_blue;
+    color: $zane_white;
+    border-radius: 0.8rem;
+    border: 0;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+
+    &:hover {
+        background: $zane_blue_dark;
+    }
+}
+
+.Header {
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    height: 6rem;
+    background: $zane_white;
+
+    .Logo {
+        background: url(../assets/zane_logo.svg) no-repeat center / contain;
+        height: 6rem;
+        margin-left: 2rem;
+    }
+
+    .Tagline {
+        text-align: center;
+        color: $zane_text;
+        font-weight: 400;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        strong {
+            color: $zane-blue;
+            font-weight: 600;
+        }
+    }
+
+    .Button {
+        height: 6rem;
+    }
+}
+
+main {
+    position: relative;
+
+    &.splash {
+        background: url(../assets/home_back.svg) no-repeat left top / contain;
+
+        &__custom {
+            background: url(../assets/pds_back_left.svg) no-repeat left top / contain, url(../assets/pds_back_right.svg) no-repeat right top / contain;
+        }
+    }
+}
+
+.Form {
+    background: $zane_black;
+    padding: 4rem 12rem 4rem 4rem;
+
+    h1 {
+        color: $zane_blue_light;
+        font-size: 6rem;
+        margin-bottom: 6rem;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    p {
+        color: $zane_blue_light;
+    }
+
+    .form-control {
+        border: 0;
+        border-radius: 0.8rem;
+        font-size: 1.4rem;
+        padding: 1rem 2rem;
+        height: 6rem;
+    }
+}
+
+.Footer {
+    background: $zane_blue;
+    color: $zane_white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    [class*="col"] {
+        height: 6rem;
+        display:flex;
+        align-items: center;
+    }
+
+    ul {
+        li {
+            list-style: none;
+            display: inline-block;
+            
+            a {
+                text-decoration: none;
+                color: $zane_white;
+                margin-left: 2rem;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: $zane_text;
+                }
+            }
+        }
+    }
+
+    small {
+        padding-right: 2rem;
+        font-size: 1.2rem;
+    }
+
+    .copy {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .links {
+        justify-content: space-around;
+
+        a {
+            color: $zane_white;
+            text-decoration: none;
+            margin: 0 2rem;
+        }
+    }
+}
+
+
+
+@media (max-width: 576px) {
+    .Header {
+        height: unset;
+
+        .Logo {
+            margin-left: 0;
+            height: 6rem;
+            background-size: 80%;
+        }
+
+        .Button {
+            height: 6rem;
+        }
+
+        .Tagline {
+            padding: 1rem 2rem;
+            border-top: solid 0.1rem $zane_blue;                
+
+            h1 {
+            font-size: 1.4rem;
+            }
+        }
+    }
+
+    .Footer {
+        position: static;
+        
+        [class*="col"] {
+            height: unset;
+        }
+
+        .nav {
+            padding: 1rem 0;
+            border-bottom: solid 0.1rem $zane_white;
+
+            ul {
+                margin: 0;
+            }
+        }
+
+        .copy {
+            justify-content: center;
+            padding: 0.4rem;
+        }
+
+        .links {
+            margin: 0.8rem auto;
+            font-size: 1.2rem;
+        }
+    }
+}

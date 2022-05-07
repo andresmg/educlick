@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-weight: 600;
+    margin: 0;
+}
+
+h1 {
+
+    &.title {
+            font-size: 5.6rem;
+            color: $zane_blue;
+            font-weight: 600;
+            position: relative;
+    
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: -1rem;
+                left: 0;
+                width: 20rem;
+                height: 0.5rem;
+                background-color: $zane_blue;
+            }
+
+            &.light {
+                color: $zane_blue_light;
+
+                &:before {
+                    background-color: $zane_blue_light;
+                }
+            }
+
+            &.dark {
+                color: $zane_blue_dark;
+
+                &:before {
+                    background-color: $zane_blue_dark;
+                }
+            }
+        
+    }
+}
+
+@media (max-width: 576px) {
+
+    h1 {
+        &.title {
+            font-size: 4rem;
+        }
+    }
+}

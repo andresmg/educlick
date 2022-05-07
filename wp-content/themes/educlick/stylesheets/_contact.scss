@@ -1,0 +1,88 @@
+.contact {
+    background: url(../assets/terms_bg.jpg) no-repeat center center / cover;
+}
+
+.Main {
+    overflow: hidden;
+
+    &__Contact {
+        height: calc(100vh - 12rem);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background: $zane_black;
+        padding: 4rem !important;
+
+        a {
+            text-decoration: none;
+            color: $zane_white;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $zane_blue_light;
+            }
+        }
+
+            &__rrss {
+                margin-top: 4rem;
+
+                .tel, .instagram, .mail {
+                    display: flex;
+                    align-items: center;
+
+                    &:before {
+                        content: '';
+                        display: inline-block;
+                        margin-right: 1rem;
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+
+                .tel {
+                    &:before {
+                        background: url(../assets/phone.svg) no-repeat center center / contain;
+                    }
+                }
+
+                .instagram {
+                    &:before {
+                        background: url(../assets/rrss.svg) no-repeat center center / contain;
+                    }
+                }
+
+                .mail {
+                    margin-bottom: 3rem;
+                    &:before {
+                        background: url(../assets/mail.svg) no-repeat center center / contain;
+                    }
+                }
+            }
+
+            &__back {
+                height: calc(100vh - 12rem);
+                background: url(../assets/contactus_bg.svg) no-repeat center center / contain;
+            }
+        
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Contact {
+        height: unset;
+
+            h1 {
+                font-size: 5rem !important;
+                margin-bottom: 2rem !important;
+            }
+
+            &__rrss {
+                .tel {
+                    margin-bottom: 3rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.terms {
+    background: url(../assets/terms_bg.jpg) no-repeat center center / cover;
+}
+
+.Main {
+    overflow: hidden;
+
+    &__Terms {
+        height: calc(100vh - 12rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &__info {
+            color: $zane_white;
+            border: solid 0.2rem $zane_blue;
+            padding: 4rem;
+            padding-top: 8rem;
+            position: relative;
+
+            h1 {
+                background: $zane_blue;
+                color: $zane_white;
+                font-size: 3rem;
+                position: absolute;
+                text-align: center;
+                padding: 1.4rem  2rem;
+                top:-3rem;
+            }
+        }
+
+
+        .btn {
+            margin: 4rem auto 0 auto;
+            width: auto;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Terms {
+        height: unset;
+        margin-top: 4rem;
+        
+                &__info {
+                    font-size: 1.4rem;
+                    h1 {
+                        background: $zane_blue;
+                        color: $zane_white;
+                        font-size: 2rem;
+                        position: absolute;
+                        text-align: center;
+                        padding: 2rem;
+                        top:-2rem
+                    }
+                }
+
+
+                .btn {
+                    margin-bottom: 4rem;
+                }
+            
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.Main {
+    &__Pd {
+    height: calc(100vh - 12rem);
+    display: flex;
+    align-items: center;
+
+        &__info {
+            padding-right: 4rem;
+
+            h1 {
+                color: $zane_blue_mid;
+
+                &:before {
+                    background-color: $zane_blue_mid;
+                }
+            }
+        }
+
+        p {
+            font-size: 2rem;
+            margin-top: 4rem;
+
+            span {
+                color: $zane_blue_mid;
+            }
+        }
+
+        .Back {
+            background: url(../assets/pd-bg.jpg) no-repeat center / cover;
+            height: calc(100vh - 12rem);
+        }
+
+        .Form {
+            background: url(../assets/book_now_back.svg) no-repeat center right / cover;
+            height: calc(100vh - 12rem);   
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 20rem;
+            flex-direction: column;
+
+            h1, p {
+                color: $zane_white;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Pd {
+        height: unset;
+        margin-top: 4rem;
+
+        &__info {
+            padding: 2rem 4rem;
+        }
+
+        h1 {
+            font-size: 3.6rem;
+        }
+
+        .Back {
+            position: static;
+            height: 18rem;
+            padding: 0;
+        }
+
+        .Form {
+            padding: 4rem;
+            height: unset;
+
+            background: $zane_black url(../assets/book_now_back.svg) no-repeat center center / cover;
+        }
+        }
+
+    }
+}

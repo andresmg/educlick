@@ -25,28 +25,43 @@
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+	<!-- CSS only -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+	<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+	<link href="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/stylesheets/custom_styles.css" rel="stylesheet" type="text/css">
+
 	<?php if ( is_singular() ) wp_enqueue_script('comment-reply'); ?>
 
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-	
-	<div id="page-wrap">
 
-		<div id="header">
-			<h1><a href="<?php echo home_url() ?>/"><?php bloginfo('name'); ?></a></h1>
-			<div class="description"><?php bloginfo('description'); ?></div>
-            <!-- si tienes una imagen como logo -->
-            
-            <a href="<?php echo home_url() ?>/">
-                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/images/logo.png" width="154" height="54" alt="___"/>
-            </a>
-            <!-- fin de la imagen como logo -->
-            
-		</div>
-        <div id="access">
-        	<nav>
-        		<?php wp_nav_menu( array( 'container' => '', 'container_class' => false,'menu_class' => 'nav superfish', 'theme_location' => 'primary' ) ); ?>
-			</nav>
-        </div><!-- close access -->
+<?php
+$tagline = get_field('tagline', 52);
+$button = get_field( 'button', 52 );
+$button_url = get_field( 'button_url', 52 );
+?>
+	<header class="Header container-fluid">
+      <div class="row d-flex justify-content-between align-items-center">
+        <a href="<?php echo get_home_url(); ?>" class="col-sm-1 col-6 Logo"></a>
+        <div class="col-sm-9 d-none d-sm-block Tagline">
+          <h1>
+		  <?php echo $tagline; ?>
+          </h1>
+        </div>
+        <a href="<?php echo $button_url; ?>" class="col-sm-1 col-6 Button" target="_blank"><?php echo $button; ?></a>
+        <div class="col-12 d-block d-sm-none Tagline">
+          <h1>
+		  <?php echo $tagline; ?>
+          </h1>
+        </div>
+      </div>
+    </header>

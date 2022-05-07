@@ -1,0 +1,199 @@
+.Main {
+    &__Includes {
+        height: calc(100vh - 12rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__background {
+            height: calc(100vh - 12rem);
+        }
+
+        &__left {
+            padding: 4rem 6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            h1 {
+                font-size: 4rem;
+                margin-bottom: 2rem;
+
+                &.dark {
+                    color: $zane_blue;
+                }
+
+                &.light {
+                    color: $zane_blue_light;
+                }
+            }
+
+            h2 {
+                background: $zane_blue;
+                color: $zane_white;
+                font-size: 6rem;
+                padding: 2rem 4rem 2rem 0;
+                margin-bottom: 4rem;
+                position: relative;
+
+                &.dark {
+                    background: $zane_blue_dark;
+
+                    &::before {
+                        background: $zane_blue_dark;
+                    }
+                }
+
+                &.light {
+                    background: $zane_blue_light;
+
+                    &::before {
+                        background: $zane_blue_light;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 50%;
+                    height: 11.2rem;
+                    position: absolute;
+                    top: 0;
+                    left: -50%;
+                    background: $zane_blue;
+                }
+            }
+
+            p {
+                margin-bottom: 4rem;
+            }
+        }
+    
+        
+        &__right {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+
+            .icon {
+                text-align: center;
+                text-decoration: none;
+                color: $zane_text;
+                overflow: hidden;
+                position: relative;
+
+                img {
+                    width: 8rem;
+                    height: 8rem;
+                    transition: all 0.3s ease-in-out;
+                    margin-top: 0;
+                }
+
+                h6 {
+                    text-align: center;
+                    margin-top: 2rem;
+                    font-size: 1.4rem;
+                    opacity: 1;
+                    transition: all 0.3s ease-in-out;
+
+                    &.light {
+                        color: $zane_blue_light;
+                    }
+
+                    &.blue {
+                        color: $zane_blue;
+                    }
+                }
+            }
+
+            .order {
+                padding: 8rem 4rem;
+                margin-top: 8rem;
+                background:  $zane_black;
+                color: $zane_white;
+                position: relative;
+                font-size: 2.2rem;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    height: 10rem;
+                    top: -10rem;
+                    right: 0;
+                    background: url(../assets/inludes_box_splash.svg) no-repeat right bottom / contain;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    position: absolute;
+                    height: 10rem;
+                    bottom: -10rem;
+                    right: 0;
+                    background: url(../assets/inludes_box_splash_bttm.svg) no-repeat right top / contain;}
+
+                a, strong, b {
+                    color: $zane_blue_light;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+
+    .Main {
+        &__Includes {
+        height: unset;
+        padding: 4rem;
+        padding-bottom: 0;
+
+            &__left {
+
+                h1 {
+                    font-size: 4rem;
+                }
+
+                h2 {
+                    font-size: 3rem;
+                    padding: 2rem 0;
+
+                    &:before {
+                        width: 140%;
+                        height: 11.2rem;
+                        top: 0;
+                        left: -20%;
+                        z-index: -1;
+                    }
+                }
+            }
+
+            .order {
+                width: 100%;
+                height: 14rem;
+                padding: 2rem 0;
+                margin-top: 6rem;
+
+                h1 {
+                    font-size: 5rem;
+                    width: 120%;
+                    margin-left: -60%;
+                    left: 50%;
+                }
+
+                h3 {
+                font-size: 3rem;
+                }
+            }
+        
+        }
+
+    }
+}
