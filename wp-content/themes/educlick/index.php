@@ -27,32 +27,29 @@ $brochure_pdf = get_field( 'brochure_pdf' );
         <div class="col-12 col-sm-10">
           <div class="row">
             <div class="col-12 col-sm-6">
-              <div class="row Rws">
-			  <?php if( have_rows('links') ): ?>
-					<?php $delay=0; while( have_rows('links') ): the_row(); 
-						// vars
-						$name = get_sub_field('name');
-						$title = get_sub_field('title');
-						$subtitle = get_sub_field('subtitle');
-						$link = get_sub_field('link');
-						?>
-						<a
-						href="<?php echo $link ?>"
-						class="col-sm-6 col-5 Main__Home__card <?php echo $name ?>"
-						data-aos="fade-down"
-						data-aos-once="true"
-						data-aos-duration="1000"
-						data-aos-delay="<?php echo $delay ?>"
-						>
-						<span>
-							<h4><?php echo $title ?></h4>
-							<?php echo $subtitle ?>
-						</span>
-						</a>	
-					<?php $delay = $delay + 300; endwhile; ?>
-				<?php endif; ?>
-                <div
-                  class="col-12 Brochure d-flex justify-content-center align-items-center"
+              <div class="row justify-content-around">
+                <?php if( have_rows('links') ): ?>
+                  <?php $delay=0; while( have_rows('links') ): the_row(); 
+                    // vars
+                    $image = get_sub_field('image');
+                    $link = get_sub_field('link');
+                    ?>
+                    <a
+                    href="<?php echo $link ?>"
+                    class="col-5 Main__Home__card"
+                    data-aos="fade-down"
+                    data-aos-once="true"
+                    data-aos-duration="1000"
+                    data-aos-delay="<?php echo $delay ?>"
+                    style="background: #fff url(<?php echo $image['url'] ?>) no-repeat center / 18rem;"
+                    >
+                    </a>	
+                  <?php $delay = $delay + 300; endwhile; ?>
+                <?php endif; ?>
+              </div>
+		      <div class="row justify-content-center">
+		    	<div
+                  class="col-12 col-sm-10 Brochure d-flex justify-content-center align-items-center"
                   data-aos="fade-up"
                   data-aos-once="true"
                   data-aos-delay="900"
@@ -64,7 +61,7 @@ $brochure_pdf = get_field( 'brochure_pdf' );
                     <p><?php echo $brochure_subtitle ?></p>
                   </a>
                 </div>
-              </div>
+			</div>
             </div>
             <div class="col-12 col-sm-5 Video">
               <div
@@ -84,16 +81,17 @@ $brochure_pdf = get_field( 'brochure_pdf' );
                 <video
                   loop
                   muted
-                  autoplay
+                  controls
                   playsinline
                   class="Video__player__video"
+                  poster="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/video-bg.jpg"
                 >
                   <source 	
 					src="
 					<?php if ($video) : ?>
 					<?php echo $video['url']; ?>
 					<?php else : ?>
-					<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/educlick.mp4; ?>
+					<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/educlick.mp4
 					<?php endif;  ?>
 					"
 					type="video/mp4" />

@@ -152,10 +152,17 @@
     .Main {
         &__Includes {
         height: unset;
-        padding: 4rem;
+        padding: 0;
         padding-bottom: 0;
 
+
+
+        &__background {
+            height: 30rem
+        }
+
             &__left {
+                padding: 2rem;
 
                 h1 {
                     font-size: 4rem;
@@ -164,21 +171,32 @@
                 h2 {
                     font-size: 3rem;
                     padding: 2rem 0;
+                    margin-bottom: 0;
 
                     &:before {
                         width: 140%;
-                        height: 11.2rem;
+                        height: 7.6rem;
                         top: 0;
-                        left: -20%;
+                        left: -120%;
                         z-index: -1;
                     }
+                }
+
+                p {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            &__right {
+                .icon {
+                    padding: 2rem;
                 }
             }
 
             .order {
                 width: 100%;
-                height: 14rem;
-                padding: 2rem 0;
+                height: unset;
+                padding: 2rem 3rem;
                 margin-top: 6rem;
 
                 h1 {

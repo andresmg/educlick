@@ -102,7 +102,6 @@
     .Main {
         &__Vce {
         height: unset;
-        margin-top: 4rem;
 
             &__info {
                 padding: 2rem;
@@ -110,6 +109,7 @@
 
             &__icons {
                 margin: 4rem 0;
+                padding: 0 3rem;
             }
 
             &__icon {
@@ -125,6 +125,15 @@
                 height: 30rem;
                 margin-bottom: 4rem;
                 border-radius: 0;
+                width: 100%;
+
+                .background {
+                    position: static;
+                    width: 100%;
+                    display: block;
+                    margin-left: 0;
+                    margin-top: 0;
+                }
             }
         }
     }

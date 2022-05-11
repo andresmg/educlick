@@ -11,17 +11,8 @@ Template Name: WRS Resources Page
 
 <?php
 // var para todos los custom fields 
-// $texto_inicial = get_field( 'texto_inicial' );
-// $ranking_internacional = get_field( 'ranking_internacional' );
-// $ranking_nacional = get_field( 'ranking_nacional' );
-// $texto_barra_naranja = get_field( 'texto_barra_naranja' );
-// $whatsapp = get_field( 'whatsapp' );
-// $mail = get_field( 'mail' );
-// $instagram = get_field( 'instagram' );
-// $twitter = get_field( 'twitter' );
-// $bio = get_field( 'bio' );
-// $texto_perfil = get_field( 'texto_perfil' );
-// $quote = get_field( 'quote' );
+$column_background = get_field( 'column_background' );
+$content_subtitle = get_field( 'content_subtitle' );
 ?>
 
 <?php endwhile; ?>
@@ -31,157 +22,78 @@ Template Name: WRS Resources Page
 <main class="container-fluid splash__custom">
       <div class="Main__Resources">
         <div class="row">
-          <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-6">
             <div class="row">
-              <div class="col-sm-6 col-12 Main__Resources__column wrs"></div>
+              <div class="col-sm-6 col-12 Main__Resources__column wrs" style="
+            background: url(<?php echo $column_background['url']?>) no-repeat center / cover;"></div>
               <div class="col-sm-4 col-12">
                 <div class="row align-items-center Main__Resources__buttons">
-                  <div
-                    class="col-sm-12 col-6 button active topbtn"
-                    onclick="showTop()"
-                  >
-                    <p>STUDENT WORKBOOKS</p>
-                  </div>
-                  <div
-                    class="col-sm-12 col-6 button bttmbtn"
-                    onclick="showBottom()"
-                  >
-                    <p>TEACHER RESOURCES</p>
-                  </div>
+                <?php if( have_rows('buttons') ): ?>
+                  <?php $count = 1; while( have_rows('buttons') ): the_row(); 
+                    // vars
+                    $button_icon = get_sub_field('button_icon');
+                    $button_text = get_sub_field('button_text');
+                    ?>
+                    <div
+                      class="col-sm-12 col-6 button <?php if ($count == 1) { echo "active topbtn"; } ?><?php if ($count > 1) { echo "bttmbtn"; } ?>"
+                      onclick="<?php if ($count == 1) { echo "showTop()"; } ?><?php if ($count > 1) { echo "showBottom()"; } ?>"
+                    >
+                      <p><?php echo $button_text ?></p>
+                    </div>	
+                  <?php $count++; endwhile; ?>
+                 <?php endif; ?>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-12 col-sm-4 Main__Resources__info">
-            <div id="top" class="d-block">
+              <?php if( have_rows('content') ): ?>
+                  <?php $count = 1; while( have_rows('content') ): the_row(); 
+                    // vars
+                    $content_body = get_sub_field('content_body');
+                    $content_title = get_sub_field('content_title');
+                    ?>
+
+            <div id="<?php if ($count == 1) { echo "top"; } ?><?php if ($count > 1) { echo "bottom"; } ?>" class="<?php if ($count == 1) { echo "d-block"; } ?> <?php if ($count > 1) { echo "d-none"; } ?>">  
               <div
                 data-aos="fade-up"
                 data-aos-once="true"
                 data-aos-duration="800"
               >
-                <h3>Work Related Skills</h3>
-                <h1 class="title student">Student Workbooks</h1>
-                <p>
-                  Our VCE Vocational Major student workbooks have been designed
-                  to cover all key skills and knowledge as well as incorporate
-                  engaging and interactive student activities. A new course
-                  requires detailed content and our student workbooks have it
-                  all.
-                </p>
-                <p>
-                  All of our content is mapped to VCAA requirements and no
-                  photocopying is required. Students and teachers now have a
-                  structured resource allowing more time on teaching and
-                  engagement and less time on stressing over content
-                  development.
-                </p>
+                <h3><?php echo $content_subtitle ?></h3>
+                <h1 class="title <?php if ($count == 1) { echo "student"; } ?> <?php if ($count > 1) { echo "teacher"; } ?>"><?php echo $content_title ?></h1>
+                <?php echo $content_body ?>
               </div>
               <div class="row Main__Resources__icons">
-                <a
-                  href="/"
-                  class="col-sm-3 col-6 icon"
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-duration="800"
-                  data-aos-delay="300"
-                >
-                  <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/notebook_blue.svg" alt="STUDENT WORKBOOKS" />
-                  <h6>STUDENT WORKBOOK</h6>
-                </a>
-                <a
-                  href="/"
-                  class="col-sm-3 col-6 icon"
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-duration="800"
-                  data-aos-delay="350"
-                >
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/sketch_blue.svg"
-                    alt="VCAA CONTENT MAPPING
-                "
-                  />
-                  <h6>VCAA CONTENT MAPPING</h6>
-                </a>
-                <a
-                  href="/"
-                  class="col-sm-3 col-6 icon"
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-duration="800"
-                  data-aos-delay="400"
-                >
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/workbook_blue.svg"
-                    alt="TEACHER WORKBOOK
-                "
-                  />
-                  <h6>TEACHER WORKBOOK</h6>
-                </a>
-                <a
-                  href="/"
-                  class="col-sm-3 col-6 icon"
-                  data-aos="fade-up"
-                  data-aos-once="true"
-                  data-aos-duration="800"
-                  data-aos-delay="450"
-                >
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/news_blue.svg"
-                    alt="TEACHER KIT INCLUSIONS
-                "
-                  />
-                  <h6>TEACHER KIT INCLUSIONS</h6>
-                </a>
+              <?php if( have_rows('content_icons') ): ?>
+                  <?php $delay = 300; while( have_rows('content_icons') ): the_row(); 
+                    // vars
+                    $icon = get_sub_field('icon');
+                    $icon_text = get_sub_field('icon_text');
+                    $icon_file = get_sub_field('icon_file');
+                    ?>
+                    <a
+                      href="<?php echo $icon_file['url'] ?>"
+                      class="col-sm-3 col-6 icon"
+                      data-aos="fade-up"
+                      data-aos-once="true"
+                      data-aos-duration="800"
+                      data-aos-delay="<?php echo $delay ?>"
+                    >
+                      <img
+                        src="<?php echo $icon['url'] ?>"
+                        alt="<?php echo $icon_text ?>"
+                      />
+                      <h6><?php echo $icon_text ?></h6>
+                    </a>
+                  <?php $delay = $delay + 300; endwhile; ?>
+                 <?php endif; ?>
               </div>
             </div>
-            <div id="bottom" class="d-none">
-              <h3>Work Related Skills</h3>
-              <h1 class="title teacher">Teacher Resources</h1>
-              <p>
-                Teacher resources allow teachers to focus on what they do best,
-                teach. We supply everything a teacher needs including their own
-                copies of student workbooks as well as teacher guides with
-                answers to all activities and extension tasks.
-              </p>
-
-              <p>
-                eduCLicks teacher pack also includes all applied learning games
-                and activities so teachers do not need to source anything, it’s
-                all in one place. Check out our inclusions.
-              </p>
-
-              <div class="row Main__Resources__icons">
-                <a href="/" class="col-sm-3 icon">
-                  <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/notebook_blue.svg" alt="STUDENT WORKBOOKS" />
-                  <h6>STUDENT WORKBOOK</h6>
-                </a>
-                <a href="/" class="col-sm-3 icon">
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/sketch_blue.svg"
-                    alt="VCAA CONTENT MAPPING
-                "
-                  />
-                  <h6>VCAA CONTENT MAPPING</h6>
-                </a>
-                <a href="/" class="col-sm-3 icon">
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/workbook_blue.svg"
-                    alt="TEACHER WORKBOOK
-                "
-                  />
-                  <h6>TEACHER WORKBOOK</h6>
-                </a>
-                <a href="/" class="col-sm-3 icon">
-                  <img
-                    src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/news_blue.svg"
-                    alt="TEACHER KIT INCLUSIONS
-                "
-                  />
-                  <h6>TEACHER KIT INCLUSIONS</h6>
-                </a>
-              </div>
-            </div>
+                    
+                  <?php $count++; endwhile; ?>
+                 <?php endif; ?>
+            
           </div>
         </div>
       </div>

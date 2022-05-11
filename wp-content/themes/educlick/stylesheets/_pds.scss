@@ -38,6 +38,7 @@
         margin-top: 4rem;
         text-decoration: none;
         color: $zane_text;
+        text-transform: uppercase;
         transition: all 0.3s ease-in-out;
 
         &:hover {
@@ -46,14 +47,6 @@
 
             .icons {
                 top:55%;
-                
-                &__book {
-                    background: $zane_blue_light url(../assets/book_white.svg) no-repeat center / 12rem;
-                }
-    
-                &__dollar {
-                    background: $zane_blue_light url(../assets/dollar_white.svg) no-repeat center / 12rem;
-                }
             }
 
             &:before {
@@ -165,19 +158,25 @@
         margin-top: 4rem;
 
         &__cards {
-            margin-top: 8rem;
+            margin-top: 10rem;
+            height: 19rem;
+            font-size: 2rem;
     
             &:before {
                 width: 2rem;
             }
     
             .icons {
-                top: 65%;
+                top: 80%;
+                width: 16rem;
+                height: 16rem;
+                margin-left: -8rem;
+                margin-top: -20rem;
             }
         }
     
         .Cta {
-            margin-top: 15rem;
+            margin-top: 12rem;
             text-align: center;
             font-size: 1.8rem;
             margin-bottom: 6rem;

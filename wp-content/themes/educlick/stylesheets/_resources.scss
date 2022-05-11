@@ -4,7 +4,6 @@
         
         &__column {
             height: calc(100vh - 12rem);
-            background: url(../assets/column-bg.jpg) no-repeat center / cover;
             position: relative;
             display: flex;
             justify-content: center;
@@ -246,6 +245,10 @@
     
                         &.active {
                             background: $zane_blue url(../assets/student.svg) no-repeat center 2rem / 7rem;
+
+                            &.light {
+                                background: $zane_blue_light url(../assets/student.svg) no-repeat center 2rem / 7rem;
+                            }
                         }
                     }
     
@@ -254,6 +257,10 @@
     
                         &.active {
                             background: $zane_blue url(../assets/teacher.svg) no-repeat center 3rem / 7rem;
+
+                            &.light {
+                                background: $zane_blue_light url(../assets/teacher.svg) no-repeat center 3rem / 7rem;
+                            }
                         }
                     }
                 }

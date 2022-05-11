@@ -13,7 +13,7 @@ $email = get_field( 'email', 54 );
           </ul>
         </div>
         <div class="col-sm-2 col-12 links text-center">
-          <a href="tel:0455<?php echo $phone; ?>716777"><?php echo $phone; ?></a>
+          <a href="tel:<?php echo $phone; ?>"><?php echo $phone; ?></a>
           <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
         </div>
         <div class="col-sm-5 col-12 copy">

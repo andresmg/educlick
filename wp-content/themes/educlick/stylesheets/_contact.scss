@@ -1,5 +1,5 @@
 .contact {
-    background: url(../assets/terms_bg.jpg) no-repeat center center / cover;
+    background: url(../assets/terms_bg.jpg) no-repeat center center / cover !important;
 }
 
 .Main {
@@ -26,36 +26,9 @@
             &__rrss {
                 margin-top: 4rem;
 
-                .tel, .instagram, .mail {
-                    display: flex;
-                    align-items: center;
-
-                    &:before {
-                        content: '';
-                        display: inline-block;
-                        margin-right: 1rem;
-                        width: 3rem;
-                        height: 3rem;
-                    }
-                }
-
-                .tel {
-                    &:before {
-                        background: url(../assets/phone.svg) no-repeat center center / contain;
-                    }
-                }
-
-                .instagram {
-                    &:before {
-                        background: url(../assets/rrss.svg) no-repeat center center / contain;
-                    }
-                }
-
-                .mail {
-                    margin-bottom: 3rem;
-                    &:before {
-                        background: url(../assets/mail.svg) no-repeat center center / contain;
-                    }
+                .iconic {
+                    margin: 1rem 0;
+                    padding-left: 3rem;
                 }
             }
 
@@ -71,7 +44,11 @@
 
     .Main {
         &__Contact {
-        height: unset;
+            height: unset;
+
+        &__back {
+            height: 30rem;
+        }
 
             h1 {
                 font-size: 5rem !important;

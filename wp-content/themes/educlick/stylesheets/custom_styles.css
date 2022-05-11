@@ -58,52 +58,14 @@ h1.title.dark:before {
 
 .Main__Home__card {
   height: 22rem;
-  position: relative;
   text-decoration: none;
   color: #333;
-  margin-bottom: 2rem;
-}
-
-.Main__Home__card.pds {
-  background: url(../assets/home_pds.svg) no-repeat center top/17rem;
-}
-
-.Main__Home__card.pds:hover {
-  color: #88d3f3;
-}
-
-.Main__Home__card.wrs {
-  background: url(../assets/home_wrs.svg) no-repeat center top/17rem;
-}
-
-.Main__Home__card.wrs:hover {
-  color: #2baae1;
-}
-
-.Main__Home__card.vce {
-  background: url(../assets/home_vce.svg) no-repeat center top/17rem;
-}
-
-.Main__Home__card.vce:hover {
-  color: #0b6386;
-}
-
-.Main__Home__card.pd {
-  background: url(../assets/home_pd.svg) no-repeat center top/17rem;
-}
-
-.Main__Home__card.pd:hover {
-  color: #0483b6;
-}
-
-.Main__Home__card span {
-  position: absolute;
-  bottom: 2rem;
-  left: 8rem;
+  margin-bottom: 4rem;
+  opacity: 1;
 }
 
 .Main__Home__card:hover {
-  background-size: 18rem;
+  transform: scale(1.03) !important;
   transition: all 0.3s ease-in-out !important;
 }
 
@@ -183,7 +145,7 @@ h1.title.dark:before {
   .Main__Home__card {
     height: 22rem;
     background-size: 14rem !important;
-    background-position: top center !important;
+    background-position: left top !important;
   }
   .Main__Home .Rws {
     display: flex;
@@ -244,6 +206,7 @@ h1.title.dark:before {
   margin-top: 4rem;
   text-decoration: none;
   color: #333;
+  text-transform: uppercase;
   transition: all 0.3s ease-in-out;
 }
 
@@ -254,14 +217,6 @@ h1.title.dark:before {
 
 .Main__Pds__cards:hover .icons {
   top: 55%;
-}
-
-.Main__Pds__cards:hover .icons__book {
-  background: #70D5F8 url(../assets/book_white.svg) no-repeat center/12rem;
-}
-
-.Main__Pds__cards:hover .icons__dollar {
-  background: #70D5F8 url(../assets/dollar_white.svg) no-repeat center/12rem;
 }
 
 .Main__Pds__cards:hover:before {
@@ -363,16 +318,22 @@ h1.title.dark:before {
     margin-top: 4rem;
   }
   .Main__Pds__cards {
-    margin-top: 8rem;
+    margin-top: 10rem;
+    height: 19rem;
+    font-size: 2rem;
   }
   .Main__Pds__cards:before {
     width: 2rem;
   }
   .Main__Pds__cards .icons {
-    top: 65%;
+    top: 80%;
+    width: 16rem;
+    height: 16rem;
+    margin-left: -8rem;
+    margin-top: -20rem;
   }
   .Main__Pds .Cta {
-    margin-top: 15rem;
+    margin-top: 12rem;
     text-align: center;
     font-size: 1.8rem;
     margin-bottom: 6rem;
@@ -407,7 +368,6 @@ h1.title.dark:before {
 }
 
 .Main__Pd .Back {
-  background: url(../assets/pd-bg.jpg) no-repeat center/cover;
   height: calc(100vh - 12rem);
 }
 
@@ -546,13 +506,13 @@ h1.title.dark:before {
 @media (max-width: 576px) {
   .Main__Vce {
     height: unset;
-    margin-top: 4rem;
   }
   .Main__Vce__info {
     padding: 2rem;
   }
   .Main__Vce__icons {
     margin: 4rem 0;
+    padding: 0 3rem;
   }
   .Main__Vce__icon {
     margin-bottom: 4rem;
@@ -566,10 +526,18 @@ h1.title.dark:before {
     height: 30rem;
     margin-bottom: 4rem;
     border-radius: 0;
+    width: 100%;
+  }
+  .Main__Vce__Video .background {
+    position: static;
+    width: 100%;
+    display: block;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 
-h1.blue {
+h1.blue, h3.blue {
   color: #2BAAE1;
 }
 
@@ -579,7 +547,6 @@ h1.blue {
 
 .Main__Resources__column {
   height: calc(100vh - 12rem);
-  background: url(../assets/column-bg.jpg) no-repeat center/cover;
   position: relative;
   display: flex;
   justify-content: center;
@@ -800,11 +767,17 @@ h1.blue {
   .Main__Resources__buttons .button.topbtn.active {
     background: #2BAAE1 url(../assets/student.svg) no-repeat center 2rem/7rem;
   }
+  .Main__Resources__buttons .button.topbtn.active.light {
+    background: #70D5F8 url(../assets/student.svg) no-repeat center 2rem/7rem;
+  }
   .Main__Resources__buttons .button.bttmbtn {
     background: #231f20 url(../assets/teacher_whhite.svg) no-repeat center 3rem/7rem;
   }
   .Main__Resources__buttons .button.bttmbtn.active {
     background: #2BAAE1 url(../assets/teacher.svg) no-repeat center 3rem/7rem;
+  }
+  .Main__Resources__buttons .button.bttmbtn.active.light {
+    background: #70D5F8 url(../assets/teacher.svg) no-repeat center 3rem/7rem;
   }
   .Main__Resources__info {
     padding: 4rem;
@@ -968,8 +941,14 @@ h1.blue {
 @media (max-width: 576px) {
   .Main__Includes {
     height: unset;
-    padding: 4rem;
+    padding: 0;
     padding-bottom: 0;
+  }
+  .Main__Includes__background {
+    height: 30rem;
+  }
+  .Main__Includes__left {
+    padding: 2rem;
   }
   .Main__Includes__left h1 {
     font-size: 4rem;
@@ -977,18 +956,25 @@ h1.blue {
   .Main__Includes__left h2 {
     font-size: 3rem;
     padding: 2rem 0;
+    margin-bottom: 0;
   }
   .Main__Includes__left h2:before {
     width: 140%;
-    height: 11.2rem;
+    height: 7.6rem;
     top: 0;
-    left: -20%;
+    left: -120%;
     z-index: -1;
+  }
+  .Main__Includes__left p {
+    margin-bottom: 2rem;
+  }
+  .Main__Includes__right .icon {
+    padding: 2rem;
   }
   .Main__Includes .order {
     width: 100%;
-    height: 14rem;
-    padding: 2rem 0;
+    height: unset;
+    padding: 2rem 3rem;
     margin-top: 6rem;
   }
   .Main__Includes .order h1 {
@@ -1152,7 +1138,7 @@ h1.blue {
 }
 
 .terms {
-  background: url(../assets/terms_bg.jpg) no-repeat center center/cover;
+  background: url(../assets/terms_bg.jpg) no-repeat center center/cover !important;
 }
 
 .Main {
@@ -1213,7 +1199,7 @@ h1.blue {
 }
 
 .contact {
-  background: url(../assets/terms_bg.jpg) no-repeat center center/cover;
+  background: url(../assets/terms_bg.jpg) no-repeat center center/cover !important;
 }
 
 .Main {
@@ -1243,33 +1229,9 @@ h1.blue {
   margin-top: 4rem;
 }
 
-.Main__Contact__rrss .tel, .Main__Contact__rrss .instagram, .Main__Contact__rrss .mail {
-  display: flex;
-  align-items: center;
-}
-
-.Main__Contact__rrss .tel:before, .Main__Contact__rrss .instagram:before, .Main__Contact__rrss .mail:before {
-  content: '';
-  display: inline-block;
-  margin-right: 1rem;
-  width: 3rem;
-  height: 3rem;
-}
-
-.Main__Contact__rrss .tel:before {
-  background: url(../assets/phone.svg) no-repeat center center/contain;
-}
-
-.Main__Contact__rrss .instagram:before {
-  background: url(../assets/rrss.svg) no-repeat center center/contain;
-}
-
-.Main__Contact__rrss .mail {
-  margin-bottom: 3rem;
-}
-
-.Main__Contact__rrss .mail:before {
-  background: url(../assets/mail.svg) no-repeat center center/contain;
+.Main__Contact__rrss .iconic {
+  margin: 1rem 0;
+  padding-left: 3rem;
 }
 
 .Main__Contact__back {
@@ -1280,6 +1242,9 @@ h1.blue {
 @media (max-width: 576px) {
   .Main__Contact {
     height: unset;
+  }
+  .Main__Contact__back {
+    height: 30rem;
   }
   .Main__Contact h1 {
     font-size: 5rem !important;
@@ -1379,18 +1344,36 @@ html {
   color: #fff;
 }
 
-.btn {
+.btn, .wpcf7-submit {
   background: #2BAAE1;
   color: #fff;
   border-radius: 0.8rem;
   border: 0;
-  font-size: 2rem;
-  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  padding: 1rem 2rem !important;
+  height: unset !important;
   margin-top: 2rem;
+  font-weight: 400;
 }
 
-.btn:hover {
+.btn:hover, .wpcf7-submit:hover {
   background: #0083B7;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .form.invalid {
+  border-color: #70D5F8 !important;
+  color: #fff;
+}
+
+.wpcf7-response-output {
+  border-color: none !important;
+  color: #fff;
+}
+
+.wpcf7-not-valid-tip {
+  color: #FFC400 !important;
+  font-size: 1.2rem !important;
+  margin-top: 1rem;
 }
 
 .Header {
@@ -1455,12 +1438,16 @@ main.splash__custom {
   color: #70D5F8;
 }
 
-.Form .form-control {
+.Form .form-control, .Form .wpcf7-form-control {
   border: 0;
   border-radius: 0.8rem;
   font-size: 1.4rem;
   padding: 1rem 2rem;
   height: 6rem;
+}
+
+.Form .form-control.wpcf7-textarea, .Form .wpcf7-form-control.wpcf7-textarea {
+  height: 12rem !important;
 }
 
 .Footer {
@@ -1531,6 +1518,9 @@ main.splash__custom {
   }
   .Header .Tagline h1 {
     font-size: 1.4rem;
+  }
+  .Form .form-control, .Form .wpcf7-form-control {
+    width: 100%;
   }
   .Footer {
     position: static;

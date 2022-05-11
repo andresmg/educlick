@@ -110,18 +110,36 @@ html {
     }
 }
 
-.btn {
+.btn, .wpcf7-submit {
     background: $zane_blue;
     color: $zane_white;
     border-radius: 0.8rem;
     border: 0;
-    font-size: 2rem;
-    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    padding: 1rem 2rem !important;
+    height: unset !important;
     margin-top: 2rem;
+    font-weight: 400;
 
     &:hover {
         background: $zane_blue_dark;
     }
+}
+
+.wpcf7 form.invalid .wpcf7-response-output, .form.invalid {
+    border-color: $zane_blue-light !important;
+    color: $zane_white;
+}
+
+.wpcf7-response-output {
+    border-color: none !important;
+    color: $zane_white;
+}
+
+.wpcf7-not-valid-tip {
+    color: $zane_yellow !important;
+    font-size: 1.2rem !important;
+    margin-top: 1rem;
 }
 
 .Header {
@@ -185,12 +203,16 @@ main {
         color: $zane_blue_light;
     }
 
-    .form-control {
+    .form-control, .wpcf7-form-control {
         border: 0;
         border-radius: 0.8rem;
         font-size: 1.4rem;
         padding: 1rem 2rem;
         height: 6rem;
+
+        &.wpcf7-textarea {
+            height: 12rem !important;
+        }
     }
 }
 
@@ -269,6 +291,12 @@ main {
             h1 {
             font-size: 1.4rem;
             }
+        }
+    }
+
+    .Form {
+        .form-control, .wpcf7-form-control {
+            width: 100%;
         }
     }
 

@@ -11,17 +11,11 @@ Template Name: VCEVM Page
 
 <?php
 // var para todos los custom fields 
-// $texto_inicial = get_field( 'texto_inicial' );
-// $ranking_internacional = get_field( 'ranking_internacional' );
-// $ranking_nacional = get_field( 'ranking_nacional' );
-// $texto_barra_naranja = get_field( 'texto_barra_naranja' );
-// $whatsapp = get_field( 'whatsapp' );
-// $mail = get_field( 'mail' );
-// $instagram = get_field( 'instagram' );
-// $twitter = get_field( 'twitter' );
-// $bio = get_field( 'bio' );
-// $texto_perfil = get_field( 'texto_perfil' );
-// $quote = get_field( 'quote' );
+$aside_background = get_field( 'aside_background' );
+$title = get_field( 'title' );
+$body = get_field( 'body' );
+$table_header = get_field( 'table_header' );
+$table_body = get_field( 'table_body' );
 ?>
 
 <?php endwhile; ?>
@@ -31,22 +25,12 @@ Template Name: VCEVM Page
 <main class="container-fluid">
       <div class="Main__Vce row">
         <div class="col-12 col-sm-4 Main__Vce__Video" alt="Video">
-          <div class="background"></div>
+          <div class="background" style="background: url(<?php echo $aside_background['url'] ?>) no-repeat center/cover;"></div>
         </div>
         <div class="col-12 col-sm-6 Main__Vce__info">
           <div data-aos="fade-up" data-aos-once="true" data-aos-duration="800">
-            <h1 class="title dark">VCE Vocational major</h1>
-            <p>
-              The VCE Vocational Major is a VCE pathway which in 2023 will
-              replace the current VCAL. All senior secondary students studying
-              in schools will now have the option to complete the VCE or the NEW
-              VCE Vocational Major.
-            </p>
-            <p>
-              Both pathways enable students to receive their VCE certificates
-              (upon successful completion). All information schools require can
-              be found below in our selection of eduClick Information sheets.
-            </p>
+            <h1 class="title dark"><?php echo $title ?></h1>
+            <?php echo $body ?>
           </div>
           <div
             class="Main__Vce__Table"
@@ -56,103 +40,38 @@ Template Name: VCEVM Page
             data-aos-delay="300"
           >
             <div class="Main__Vce__Table__Head">
-              When is the change occurring?
+            <?php echo $table_header ?>
             </div>
             <div class="Main__Vce__Table__Body">
-              <ul>
-                <li>
-                  2023, Units 1 and 2 VCE Vocational Major will replace year 11
-                  VCAL stream (traditionally Intermediate VCAL)
-                </li>
-                <li>
-                  2023, Units 1 and 2 Victorian Pathways Certificate replace
-                  foundation VCAL
-                </li>
-                <li>
-                  2024, Units 1 to 4 VCE Vocational Major replace the
-                  traditional Intermediate and Senior VCAL
-                </li>
-              </ul>
+            <?php echo $table_body ?>
             </div>
           </div>
         </div>
         <div class="col-12 Main__Vce__icons">
-          <div class="row">
+          <div class="row justify-content-around">
+          <?php if( have_rows('icons') ): ?>
+					<?php $delay=0; while( have_rows('icons') ): the_row(); 
+						// vars
+						$icon = get_sub_field('icon');
+						$icon_text = get_sub_field('icon_text');
+						$icon_file = get_sub_field('icon_file');
+						?>
             <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
+              href="<?php echo $icon_file['url'] ?>"
+              class="col-sm-1 col-3 Main__Vce__icon icon dark"
               data-aos="fade-up"
               data-aos-once="true"
               data-aos-duration="800"
-              data-aos-delay="350"
+              data-aos-delay="<?php echo $delay ?>"
             >
               <img
-                src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/notebook_dark.svg"
-                alt="Who are these courses for?"
+                src="<?php echo $icon['url'] ?>"
+                alt="<?php echo $icon_text ?>"
               />
-              <h6>Who are these courses for?</h6>
+              <h6><?php echo $icon_text ?></h6>
             </a>
-            <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="400"
-            >
-              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/bulb_dark.svg" alt="All you need to know?" />
-              <h6>All you need to know?</h6>
-            </a>
-            <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="450"
-            >
-              <img
-                src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/notebook_dark.svg"
-                alt="What does educlick do?"
-              />
-              <h6>What does educlick do?</h6>
-            </a>
-            <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="500"
-            >
-              <img
-                src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/sketch_dark.svg"
-                alt="Applied learning in the VCE"
-              />
-              <h6>Applied learning in the VCE</h6>
-            </a>
-            <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="550"
-            >
-              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/workbook_dark.svg" alt="Short Coursoe" />
-              <h6>Short Coursoe</h6>
-            </a>
-            <a
-              href="/"
-              class="col-sm-2 col-4 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="600"
-            >
-              <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/news_dark.svg" alt="VET in the VCEVM" />
-              <h6>VET in the VCEVM</h6>
-            </a>
+					<?php $delay = $delay + 300; endwhile; ?>
+				<?php endif; ?>
           </div>
         </div>
       </div>

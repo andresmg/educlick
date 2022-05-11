@@ -11,17 +11,8 @@ Template Name: Contact Us Page
 
 <?php
 // var para todos los custom fields 
-// $texto_inicial = get_field( 'texto_inicial' );
-// $ranking_internacional = get_field( 'ranking_internacional' );
-// $ranking_nacional = get_field( 'ranking_nacional' );
-// $texto_barra_naranja = get_field( 'texto_barra_naranja' );
-// $whatsapp = get_field( 'whatsapp' );
-// $mail = get_field( 'mail' );
-// $instagram = get_field( 'instagram' );
-// $twitter = get_field( 'twitter' );
-// $bio = get_field( 'bio' );
-// $texto_perfil = get_field( 'texto_perfil' );
-// $quote = get_field( 'quote' );
+$title = get_field( 'title' );
+
 ?>
 
 <?php endwhile; ?>
@@ -32,54 +23,32 @@ Template Name: Contact Us Page
       <div class="row justify-content-between">
         <div class="Main__Contact__back col-sm-8 col-12"></div>
         <div class="Main__Contact col-sm-4 col-12 Form">
-          <h1>Contact us</h1>
-          <form action="">
-            <div class="form-floating mb-3">
-              <input
-                type="name"
-                class="form-control"
-                id="floatingInput"
-                placeholder="name@example.com"
-              />
-              <label for="floatingInput">Name</label>
-            </div>
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="floatingInput"
-                placeholder="name@example.com"
-              />
-              <label for="floatingInput">Email address</label>
-            </div>
-            <div class="form-floating">
-              <textarea
-                class="form-control"
-                placeholder="Leave a comment here"
-                id="floatingTextarea2"
-                style="height: 160px"
-              ></textarea>
-              <label for="floatingTextarea2">Message</label>
-            </div>
-            <div class="mb-3">
-              <button class="btn" type="submit">Send message</button>
-            </div>
-          </form>
+          <h1><?php echo $title ?></h1>
+          <?php echo do_shortcode('[contact-form-7 id="217" title="Contact us"]'); ?>
           <div class="row Main__Contact__rrss">
-            <div class="col-sm-6 col-12 mail">
-              <a href="mailto:zane@educlick.com.au">zane@educlick.com.au</a>
-            </div>
-            <div class="col-sm-6 col-12 mail">
-              <a href="mailto:clair@educlick.com.au">clair@educlick.com.au</a>
-            </div>
-            <div class="col-sm-6 col-12 tel">
-              <a href="tel:0455716777">0455716777</a>
-            </div>
-            <div class="col-sm-6 col-12 instagram">
-              <a href="https://www.instagram.com/eduClickAU" target="_blank">
-                eduClickAU</a
-              >
-            </div>
+          <?php if( have_rows('emails') ): ?>
+            <?php while( have_rows('emails') ): the_row(); 
+              // vars
+              $email_icon = get_sub_field('email_icon');
+              $email = get_sub_field('email');
+              ?>
+              <div class="col-sm-6 col-12 iconic" style="background: url(<?php echo $email_icon['url'] ?>) no-repeat left center / contain;">
+                <a href="mailto:<?php echo $email ?>"><?php echo $email ?></a>
+              </div>
+            <?php endwhile; ?>
+          <?php endif; ?>
+          <?php if( have_rows('contacts') ): ?>
+            <?php while( have_rows('contacts') ): the_row(); 
+              // vars
+              $icon = get_sub_field('icon');
+              $info = get_sub_field('info');
+              $link = get_sub_field('link');
+              ?>
+              <div class="col-sm-6 col-12 iconic" style="background: url(<?php echo $icon['url'] ?>) no-repeat left center / contain;">
+                <a href="<?php echo $url ?>"><?php echo $info ?></a>
+              </div>
+            <?php endwhile; ?>
+          <?php endif; ?>
           </div>
         </div>
       </div>
