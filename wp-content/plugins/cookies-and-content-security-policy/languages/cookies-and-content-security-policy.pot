@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Cookies and Content Security Policy\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-24 08:26+0000\n"
+"POT-Creation-Date: 2022-04-18 13:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,14 +13,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.1; wp-5.3.2"
+"X-Loco-Version: 2.5.8; wp-5.9\n"
+"X-Domain: cookies-and-content-security-policy"
 
-#: inc/modal-cacsp.php:50 inc/modal-cacsp.php:159
-#: inc/settings-cacsp-tab-texts.php:73
+#: inc/modal-cacsp.php:58 inc/modal-cacsp.php:167
+#: inc/settings-cacsp-tab-texts.php:74
 msgid "Accept all"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:73
+#: inc/settings-cacsp-tab-texts.php:74
 msgid "Accept all button"
 msgstr ""
 
@@ -48,7 +49,7 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:96
+#: inc/settings-cacsp-tab-settings.php:99
 msgid "Add grandma with milk and cookies."
 msgstr ""
 
@@ -56,7 +57,7 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:113
+#: inc/settings-cacsp-tab-settings.php:126
 msgid "Advanced settings"
 msgstr ""
 
@@ -65,11 +66,11 @@ msgstr ""
 msgid "Allow background scripts via Worker"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:168
+#: inc/settings-cacsp-tab-settings.php:181
 msgid "Allow blob:"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:70
+#: inc/settings-cacsp-tab-settings.php:73
 msgid "Allow user to access site without saving settings."
 msgstr ""
 
@@ -77,11 +78,11 @@ msgstr ""
 msgid "Always allow"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:64
+#: inc/settings-cacsp-tab-texts.php:65
 msgid "Always allow, description"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:63
+#: inc/settings-cacsp-tab-texts.php:64
 msgid "Always allow, header"
 msgstr ""
 
@@ -89,7 +90,7 @@ msgstr ""
 msgid "Always allowed, resources that the visitor can't opt out of."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:175
+#: inc/settings-cacsp-tab-quickstart.php:215
 msgid "Analytics"
 msgstr ""
 
@@ -101,7 +102,7 @@ msgstr ""
 msgid "Backgrounds"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:37
+#: inc/settings-cacsp-tab-settings.php:40
 msgid "Basic settings"
 msgstr ""
 
@@ -116,21 +117,21 @@ msgstr ""
 msgid "Buttons"
 msgstr ""
 
-#: inc/modal-cacsp.php:136 inc/settings-cacsp-tab-texts.php:70
+#: inc/modal-cacsp.php:144 inc/settings-cacsp-tab-texts.php:71
 msgid ""
 "By sharing your interests and behavior as you visit our site, you increase "
 "the chance of seeing personalized content and offers."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:281
+#: inc/settings-cacsp-tab-settings.php:309
 msgid "Bypassing"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:318
+#: inc/settings-cacsp-tab-quickstart.php:369
 msgid "Calendly"
 msgstr ""
 
-#: inc/modal-cacsp.php:59 inc/settings-cacsp-tab-texts.php:62
+#: inc/modal-cacsp.php:67 inc/settings-cacsp-tab-texts.php:63
 msgid ""
 "Choose what kind of cookies to accept. Your choice will be saved for one "
 "year."
@@ -142,40 +143,52 @@ msgid ""
 "Domains. These are recommended settings for each resource."
 msgstr ""
 
+#: inc/modal-cacsp.php:23 inc/settings-cacsp-tab-texts.php:76
+msgid "Close"
+msgstr ""
+
+#: inc/settings-cacsp-tab-texts.php:76
+msgid "Close button"
+msgstr ""
+
 #: inc/settings-cacsp-tab-colors.php:35 inc/settings-cacsp.php:92
 msgid "Colors"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:78
+#: inc/settings-cacsp-tab-texts.php:80
 msgid "Contact the administrator"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:78
+#: inc/settings-cacsp-tab-texts.php:80
 msgid "Content not allowed button"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:77
+#: inc/settings-cacsp-tab-texts.php:79
 msgid "Content not allowed text"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:61
+#: inc/settings-cacsp-tab-settings.php:297
+msgid "Cookie Expire"
+msgstr ""
+
+#: inc/settings-cacsp-tab-texts.php:62
 msgid "Cookie policy link text"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:235
+#: inc/settings-cacsp-tab-settings.php:260
 msgid "Cookie policy page"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:257
+#: inc/settings-cacsp-tab-settings.php:282
 msgid "Cookie policy target"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:253
+#: inc/settings-cacsp-tab-settings.php:278
 msgid "Cookie policy URL"
 msgstr ""
 
-#: inc/modal-cacsp.php:19 inc/modal-cacsp.php:56
-#: inc/settings-cacsp-tab-texts.php:59
+#: inc/modal-cacsp.php:27 inc/modal-cacsp.php:64
+#: inc/settings-cacsp-tab-texts.php:60
 msgid "Cookies"
 msgstr ""
 
@@ -184,7 +197,7 @@ msgstr ""
 msgid "Cookies and Content Security Policy"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:161
+#: inc/settings-cacsp-tab-quickstart.php:201
 msgid "CRM"
 msgstr ""
 
@@ -192,43 +205,51 @@ msgstr ""
 msgid "Deactivated"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:216
+#: inc/settings-cacsp-tab-settings.php:229
 msgid "Debug."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:192
+#: inc/settings-cacsp-tab-settings.php:297
+msgid "Default: 365"
+msgstr ""
+
+#: inc/settings-cacsp-tab-settings.php:205
 msgid "Disable unsafe-eval"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:180
+#: inc/settings-cacsp-tab-settings.php:193
 msgid "Disable unsafe-inline"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:228
+#: inc/settings-cacsp-tab-settings.php:241
 msgid "Disable X-Content-Security-Policy."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:194
+#: inc/settings-cacsp-tab-settings.php:207
 msgid ""
 "Disables the use of eval() and similar methods for creating code from "
 "strings."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:182
+#: inc/settings-cacsp-tab-settings.php:195
 msgid ""
 "Disables the use of inline resources, such as inline &lt;script&gt; elements,"
 " javascript: URLs, and inline event handlers."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:124
+#: inc/settings-cacsp-tab-quickstart.php:197
+msgid "Divi"
+msgstr ""
+
+#: inc/settings-cacsp-tab-settings.php:137
 msgid "Do not include css, I've got my own style."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:134
+#: inc/settings-cacsp-tab-settings.php:147
 msgid "Do not include js, I've got my own script."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:60
+#: inc/settings-cacsp-tab-settings.php:63
 msgid "Do not use a modal, I want a banner."
 msgstr ""
 
@@ -242,7 +263,7 @@ msgstr ""
 msgid "Domains"
 msgstr ""
 
-#: inc/settings-cacsp-tab-support.php:10
+#: inc/settings-cacsp-tab-support.php:11
 msgid "Donate with PayPal"
 msgstr ""
 
@@ -250,32 +271,41 @@ msgstr ""
 msgid "drop me a line"
 msgstr ""
 
+#: inc/settings-cacsp-tab-settings.php:253
+msgid ""
+"Enabling this will use the <a href=\"https://wpengine."
+"com/support/personalization-user-segmentation-page-cache/\" "
+"target=\"_blank\">User Cache Segmentation</a> to set the cookie, which will "
+"allow this plugin to work with WP Engine caching. <strong>Do not enable this "
+"setting if you are not on WP Engine.</strong>."
+msgstr ""
+
 #: inc/settings-cacsp.php:22 inc/settings-cacsp.php:42
 msgid "Example:"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:84
+#: inc/settings-cacsp-tab-settings.php:87
 msgid ""
 "Example: If you don't have any domains specified for Marketing, that setting "
 "won't show for the visitor."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:170
+#: inc/settings-cacsp-tab-settings.php:183
 msgid ""
 "Example: Some javascript libraries uses blob for images. Divi uses this for "
 "scripts in edit mode."
 msgstr ""
 
-#: inc/modal-cacsp.php:117 inc/settings-cacsp-tab-domains.php:86
-#: inc/settings-cacsp-tab-texts.php:67
+#: inc/modal-cacsp.php:125 inc/settings-cacsp-tab-domains.php:86
+#: inc/settings-cacsp-tab-texts.php:68
 msgid "Experience"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:68
+#: inc/settings-cacsp-tab-texts.php:69
 msgid "Experience, description"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:67
+#: inc/settings-cacsp-tab-texts.php:68
 msgid "Experience, header"
 msgstr ""
 
@@ -283,7 +313,7 @@ msgstr ""
 msgid "Experience, resources for displaying external videos etc."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:146
+#: inc/settings-cacsp-tab-quickstart.php:172
 msgid "Facebook Pixel"
 msgstr ""
 
@@ -303,59 +333,67 @@ msgstr ""
 msgid "Frames"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:45
+#: inc/settings-cacsp-tab-quickstart.php:49
 msgid "Google"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:88
+#: inc/settings-cacsp-tab-quickstart.php:92
+msgid "Google Ads"
+msgstr ""
+
+#: inc/settings-cacsp-tab-quickstart.php:103
 msgid "Google Ads conversions"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:99
+#: inc/settings-cacsp-tab-quickstart.php:114
 msgid "Google Ads remarketing"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:55
+#: inc/settings-cacsp-tab-quickstart.php:59
 msgid "Google Analytics"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:200
+#: inc/settings-cacsp-tab-quickstart.php:240
 msgid "Google Analytics is under \"Google\""
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:110
+#: inc/settings-cacsp-tab-quickstart.php:147
+msgid "Google Docs"
+msgstr ""
+
+#: inc/settings-cacsp-tab-quickstart.php:125
 msgid "Google Maps"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:77
+#: inc/settings-cacsp-tab-quickstart.php:81
 msgid "Google Optimize"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:66
+#: inc/settings-cacsp-tab-quickstart.php:70
 msgid "Google Tag Manager"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:121
+#: inc/settings-cacsp-tab-quickstart.php:136
 msgid "Google Translate"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:94
+#: inc/settings-cacsp-tab-settings.php:97
 msgid "Grandma mode."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:268
+#: inc/settings-cacsp-tab-quickstart.php:308
 msgid "Gravatar"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:82
+#: inc/settings-cacsp-tab-settings.php:85
 msgid "Hide unused sections in Settings."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:185
+#: inc/settings-cacsp-tab-quickstart.php:225
 msgid "Hotjar"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:273
+#: inc/settings-cacsp-tab-settings.php:301
 msgid "How to link back to settings"
 msgstr ""
 
@@ -379,7 +417,7 @@ msgid ""
 "policy/#how%20do%20i%20translate%20in%20wpml%3F"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:171
+#: inc/settings-cacsp-tab-quickstart.php:211
 msgid "Hubspot"
 msgstr ""
 
@@ -405,7 +443,7 @@ msgid ""
 "set up for you."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:276
+#: inc/settings-cacsp-tab-settings.php:304
 msgid ""
 "If you want to link back to the settings modal simply add a link with href = "
 "\"#cookiesAndContentPolicySettings\""
@@ -417,7 +455,7 @@ msgid ""
 "you want to change any of the texts."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:206
+#: inc/settings-cacsp-tab-settings.php:219
 msgid ""
 "If your host does not accept setting php header(), or if you're using static "
 "page cache that doesn't go through php, check this to add CSP as a meta tag "
@@ -429,32 +467,36 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: inc/modal-cacsp.php:118 inc/settings-cacsp-tab-texts.php:68
+#: inc/modal-cacsp.php:126 inc/settings-cacsp-tab-texts.php:69
 msgid ""
 "In order for our website to perform as well as possible during your visit. "
 "If you refuse these cookies, some functionality will disappear from the "
 "website."
 msgstr ""
 
-#: inc/modal-cacsp.php:100 inc/settings-cacsp-tab-texts.php:66
+#: inc/modal-cacsp.php:108 inc/settings-cacsp-tab-texts.php:67
 msgid ""
 "In order for us to improve the website's functionality and structure, based "
 "on how the website is used."
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:60
+#: inc/settings-cacsp-tab-texts.php:61
 msgid "Info"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:246
+#: inc/settings-cacsp-tab-quickstart.php:319
+msgid "Instagram"
+msgstr ""
+
+#: inc/settings-cacsp-tab-quickstart.php:286
 msgid "Issuu"
 msgstr ""
 
-#: inc/settings-cacsp-tab-support.php:10
+#: inc/settings-cacsp-tab-support.php:11
 msgid "It would make my day. :)"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:196
+#: inc/settings-cacsp-tab-quickstart.php:236
 msgid "Jetpack"
 msgstr ""
 
@@ -462,30 +504,30 @@ msgstr ""
 msgid "Jonk @ Follow me Darling"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:284
+#: inc/settings-cacsp-tab-settings.php:312
 msgid ""
 "Just add ?cacsp_bypass=true to your url. All cookies will be accepted for "
 "the session. Great for when you run speedtest and so forth."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:135
+#: inc/settings-cacsp-tab-quickstart.php:161
 msgid "LinkedIn Insight Tag/LinkedIn Pixel"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:329
+#: inc/settings-cacsp-tab-quickstart.php:380
 msgid "Mailchimp"
 msgstr ""
 
-#: inc/modal-cacsp.php:135 inc/settings-cacsp-tab-domains.php:98
-#: inc/settings-cacsp-tab-texts.php:69
+#: inc/modal-cacsp.php:143 inc/settings-cacsp-tab-domains.php:98
+#: inc/settings-cacsp-tab-texts.php:70
 msgid "Marketing"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:70
+#: inc/settings-cacsp-tab-texts.php:71
 msgid "Marketing, description"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:69
+#: inc/settings-cacsp-tab-texts.php:70
 msgid "Marketing, header"
 msgstr ""
 
@@ -495,11 +537,11 @@ msgid ""
 "etc."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:203
+#: inc/settings-cacsp-tab-quickstart.php:243
 msgid "Media"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:297
+#: inc/settings-cacsp-tab-quickstart.php:348
 msgid "Misc"
 msgstr ""
 
@@ -507,7 +549,7 @@ msgstr ""
 msgid "Modal background"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:59
+#: inc/settings-cacsp-tab-texts.php:60
 msgid "Modal header"
 msgstr ""
 
@@ -527,7 +569,7 @@ msgstr ""
 msgid "Modal text header color"
 msgstr ""
 
-#: inc/modal-cacsp.php:81 inc/settings-cacsp-tab-texts.php:63
+#: inc/modal-cacsp.php:89 inc/settings-cacsp-tab-texts.php:64
 msgid "Necessary"
 msgstr ""
 
@@ -547,31 +589,35 @@ msgstr ""
 msgid "On switch, text color"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:48
+#: inc/settings-cacsp-tab-settings.php:51
 msgid "Only use CSP, no modal for me."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:72
+#: inc/settings-cacsp-tab-settings.php:75
 msgid "Only works with banner."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:267
+#: inc/settings-cacsp-tab-settings.php:292
 msgid "Open cookie policy in a new tab."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:342
+#: inc/settings-cacsp-tab-quickstart.php:393
 msgid "Overwrite all settings in Domains"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:272
+#: inc/settings-cacsp-tab-quickstart.php:187
+msgid "Page builders"
+msgstr ""
+
+#: inc/settings-cacsp-tab-quickstart.php:323
 msgid "Payment"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:282
+#: inc/settings-cacsp-tab-quickstart.php:333
 msgid "PayPal"
 msgstr ""
 
-#: inc/settings-cacsp.php:88 inc/settings-cacsp-tab-quickstart.php:42
+#: inc/settings-cacsp.php:88 inc/settings-cacsp-tab-quickstart.php:46
 msgid "Quickstart"
 msgstr ""
 
@@ -583,26 +629,30 @@ msgstr ""
 msgid "Read in the FAQ how to translate with WPML."
 msgstr ""
 
-#: inc/modal-cacsp.php:30 inc/modal-cacsp.php:34 inc/modal-cacsp.php:63
-#: inc/modal-cacsp.php:67 inc/settings-cacsp-tab-texts.php:61
+#: inc/modal-cacsp.php:38 inc/modal-cacsp.php:42 inc/modal-cacsp.php:71
+#: inc/modal-cacsp.php:75 inc/settings-cacsp-tab-texts.php:62
 msgid "Read our cookie policy"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:307
+#: inc/settings-cacsp-tab-support.php:8
+msgid "Read the FAQ, all commonly asked questions are answered there."
+msgstr ""
+
+#: inc/settings-cacsp-tab-quickstart.php:358
 msgid "reCAPTCHA v3"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:146
-#: inc/settings-cacsp-tab-settings.php:158
+#: inc/settings-cacsp-tab-settings.php:159
+#: inc/settings-cacsp-tab-settings.php:171
 msgid "Recommended for better security."
 msgstr ""
 
-#: inc/modal-cacsp.php:46 inc/modal-cacsp.php:155
-#: inc/settings-cacsp-tab-texts.php:72
+#: inc/modal-cacsp.php:54 inc/modal-cacsp.php:163
+#: inc/settings-cacsp-tab-texts.php:73
 msgid "Refuse all"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:72
+#: inc/settings-cacsp-tab-texts.php:73
 msgid "Refuse button"
 msgstr ""
 
@@ -618,23 +668,23 @@ msgstr ""
 msgid "Refuse button text"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:76
+#: inc/settings-cacsp-tab-texts.php:78
 msgid "Review your settings"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:76
+#: inc/settings-cacsp-tab-texts.php:78
 msgid "Review your settings button"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:75
+#: inc/settings-cacsp-tab-texts.php:77
 msgid "Review your settings text"
 msgstr ""
 
-#: inc/modal-cacsp.php:149 inc/settings-cacsp-tab-texts.php:74
+#: inc/modal-cacsp.php:157 inc/settings-cacsp-tab-texts.php:75
 msgid "Save"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:74
+#: inc/settings-cacsp-tab-texts.php:75
 msgid "Save button"
 msgstr ""
 
@@ -651,8 +701,8 @@ msgid "Save button text"
 msgstr ""
 
 #: inc/settings-cacsp-tab-colors.php:216 inc/settings-cacsp-tab-domains.php:112
-#: inc/settings-cacsp-tab-settings.php:290 inc/settings-cacsp-tab-texts.php:82
-#: inc/settings-cacsp-tab-quickstart.php:345
+#: inc/settings-cacsp-tab-settings.php:318 inc/settings-cacsp-tab-texts.php:84
+#: inc/settings-cacsp-tab-quickstart.php:396
 #: inc/settings-cacsp-tab-activate.php:50
 msgid "Save Settings"
 msgstr ""
@@ -668,12 +718,12 @@ msgid ""
 "com<br>https://www.googletagmanager.com"
 msgstr ""
 
-#: inc/modal-cacsp.php:40 inc/settings-cacsp.php:91
-#: inc/settings-cacsp-tab-settings.php:33 inc/settings-cacsp-tab-texts.php:71
+#: inc/modal-cacsp.php:48 inc/settings-cacsp.php:91
+#: inc/settings-cacsp-tab-settings.php:36 inc/settings-cacsp-tab-texts.php:72
 msgid "Settings"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:71
+#: inc/settings-cacsp-tab-texts.php:72
 msgid "Settings button"
 msgstr ""
 
@@ -689,36 +739,40 @@ msgstr ""
 msgid "Settings button text"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:62
+#: inc/settings-cacsp-tab-texts.php:63
 msgid "Settings text"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:106
+#: inc/settings-cacsp-tab-settings.php:119
+msgid "Show close button (&times;)."
+msgstr ""
+
+#: inc/settings-cacsp-tab-settings.php:109
 msgid "Show refuse cookies button."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:125
+#: inc/settings-cacsp-tab-quickstart.php:151
 msgid "Social networks"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:257
+#: inc/settings-cacsp-tab-quickstart.php:297
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:235
+#: inc/settings-cacsp-tab-quickstart.php:275
 msgid "Spotify"
 msgstr ""
 
-#: inc/modal-cacsp.php:99 inc/settings-cacsp-tab-domains.php:74
-#: inc/settings-cacsp-tab-texts.php:65
+#: inc/modal-cacsp.php:107 inc/settings-cacsp-tab-domains.php:74
+#: inc/settings-cacsp-tab-texts.php:66
 msgid "Statistics"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:66
+#: inc/settings-cacsp-tab-texts.php:67
 msgid "Statistics, description"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:65
+#: inc/settings-cacsp-tab-texts.php:66
 msgid "Statistics, header"
 msgstr ""
 
@@ -728,7 +782,7 @@ msgid ""
 "etc."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:293
+#: inc/settings-cacsp-tab-quickstart.php:344
 msgid "Stripe"
 msgstr ""
 
@@ -744,42 +798,42 @@ msgid ""
 msgstr ""
 
 #: inc/settings-cacsp-tab-colors.php:72 inc/settings-cacsp.php:90
-#: inc/settings-cacsp-tab-texts.php:57
+#: inc/settings-cacsp-tab-texts.php:58
 msgid "Texts"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:77
+#: inc/settings-cacsp-tab-texts.php:79
 msgid "The content can't be loaded, since it is not allowed on the site."
 msgstr ""
 
-#: inc/modal-cacsp.php:82 inc/settings-cacsp-tab-texts.php:64
+#: inc/modal-cacsp.php:90 inc/settings-cacsp-tab-texts.php:65
 msgid ""
 "These cookies are not optional. They are needed for the website to function."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:50
+#: inc/settings-cacsp-tab-settings.php:53
 msgid "This will only make use of domains in Always allowed."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:218
+#: inc/settings-cacsp-tab-settings.php:231
 msgid ""
 "This will print helpful comments at the beginning of your page inside the "
 "&gt;head&lt; tag."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:157
+#: inc/settings-cacsp-tab-quickstart.php:183
 msgid "Twitter"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:144
+#: inc/settings-cacsp-tab-settings.php:157
 msgid "Use Content Security Policy for forms for added security."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:156
+#: inc/settings-cacsp-tab-settings.php:169
 msgid "Use Content Security Policy for worker-src."
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:204
+#: inc/settings-cacsp-tab-settings.php:217
 msgid "Use meta."
 msgstr ""
 
@@ -794,11 +848,11 @@ msgid ""
 "MailChimp newsletter would need https://*.list-manage.com/"
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:224
+#: inc/settings-cacsp-tab-quickstart.php:264
 msgid "Vimeo"
 msgstr ""
 
-#: inc/settings-cacsp-tab-support.php:8
+#: inc/settings-cacsp-tab-support.php:9
 msgid "Visit the support forum for the plugin at WordPress.org."
 msgstr ""
 
@@ -806,7 +860,7 @@ msgstr ""
 msgid "Want support?"
 msgstr ""
 
-#: inc/settings-cacsp-tab-support.php:9
+#: inc/settings-cacsp-tab-support.php:10
 msgid "Want to support the plugin?"
 msgstr ""
 
@@ -814,7 +868,7 @@ msgstr ""
 msgid "We are live!"
 msgstr ""
 
-#: inc/modal-cacsp.php:22 inc/settings-cacsp-tab-texts.php:60
+#: inc/modal-cacsp.php:30 inc/settings-cacsp-tab-texts.php:61
 msgid ""
 "We serve cookies. If you think that's ok, just click \"Accept all\". You can "
 "also choose what kind of cookies you want by clicking \"Settings\"."
@@ -824,7 +878,7 @@ msgstr ""
 msgid "Wildcard domains can be used.<br>Example:<br>https://*.youtube.com"
 msgstr ""
 
-#: inc/settings-cacsp-tab-settings.php:249
+#: inc/settings-cacsp-tab-settings.php:274
 msgid ""
 "Will be linked from the cookie modal. Does not show the the cookie modal for "
 "the user to be able to read the policy before accepting."
@@ -835,7 +889,11 @@ msgstr ""
 msgid "Worker"
 msgstr ""
 
-#: inc/settings-cacsp-tab-support.php:10
+#: inc/settings-cacsp-tab-settings.php:251
+msgid "WP Engine compatibility mode"
+msgstr ""
+
+#: inc/settings-cacsp-tab-support.php:11
 msgid ""
 "Yes, the plugin is free. Totally free. But if you still want to pay for it "
 "to show your appreciation:"
@@ -863,25 +921,25 @@ msgid "Your CDN, like https://media.yourdomain.com/"
 msgstr ""
 
 #: inc/settings-cacsp-update-options.php:22
-#: inc/settings-cacsp-update-options.php:482
-#: inc/settings-cacsp-update-options.php:507
-#: inc/settings-cacsp-update-options.php:530
-#: inc/settings-cacsp-update-options.php:555
+#: inc/settings-cacsp-update-options.php:569
+#: inc/settings-cacsp-update-options.php:595
+#: inc/settings-cacsp-update-options.php:620
+#: inc/settings-cacsp-update-options.php:646
 msgid "Your settings are now updated"
 msgstr ""
 
-#: inc/settings-cacsp-update-options.php:436
+#: inc/settings-cacsp-update-options.php:523
 msgid ""
 "Your settings are now updated in <a href=\"?"
 "page=cacsp_settings&tab=domains\">Domains</a>"
 msgstr ""
 
-#: inc/settings-cacsp-tab-texts.php:75
+#: inc/settings-cacsp-tab-texts.php:77
 msgid ""
 "Your settings may be preventing you from seeing this content. Most likely "
 "you have Experience turned off."
 msgstr ""
 
-#: inc/settings-cacsp-tab-quickstart.php:213
+#: inc/settings-cacsp-tab-quickstart.php:253
 msgid "YouTube"
 msgstr ""

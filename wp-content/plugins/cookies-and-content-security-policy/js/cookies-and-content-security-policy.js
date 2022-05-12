@@ -9,8 +9,14 @@ jQuery(window).on("load", function() { // was $(window).load(function () {
 	openCookiesAndContentPolicySettingsHash();
 });
 
+var CACSP_COOKIE_NAME = 'cookies_and_content_security_policy';
+
+if (cacspMessages.cacspWpEngineCompatibilityMode === '1') {
+	CACSP_COOKIE_NAME = 'wpe-us';
+}
+
 function cookiesAndContentPolicyModal() {
-	if (!Cookies.get('cookies_and_content_security_policy') && !jQuery('body').hasClass('modal-cacsp-do-not-show-cookie-modal')) {
+	if (!Cookies.get(CACSP_COOKIE_NAME) && !jQuery('body').hasClass('modal-cacsp-do-not-show-cookie-modal')) {
 		// Shom info modal
 		timer = setTimeout(function () {
 			jQuery('html, body').addClass('modal-cacsp-open');
@@ -18,18 +24,18 @@ function cookiesAndContentPolicyModal() {
 		}, 1000);
 		// Buttons for info modal
 		// Show settings
-		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-settings').click(function() {
+		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-settings').on('click', function() {
 			openCookiesAndContentPolicySettings(false);
 			return false;
 		});
 		// Refuse all
-		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-refuse').click(function() {
-			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-save').click();
+		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-refuse').on('click', function() {
+			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-save').trigger('click');
 			return false;
 		});
 		// Accept all
-		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-accept').click(function() {
-			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-accept-all').click();
+		jQuery('.modal-cacsp-box.modal-cacsp-box-info .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-accept').on('click', function() {
+			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-accept-all').trigger('click');
 			return false;
 		});
 		// Allow scroll on html if set in admin
@@ -39,6 +45,26 @@ function cookiesAndContentPolicyModal() {
 		// Save settings
 		saveCookiesAndContentPolicySettings();
 	}
+	// Close by X
+	jQuery('.modal-cacsp-box-close').on('click', function() {
+		saveByClose = false;
+		// if close on info or if cookie doesn't exists
+		if (jQuery('.modal-cacsp-box.modal-cacsp-box-info').hasClass('modal-cacsp-box-show') || !Cookies.get(CACSP_COOKIE_NAME)) {
+			jQuery('.modal-cacsp-box .modal-cacsp-box-settings-list ul li a').removeClass('modal-cacsp-toggle-switch-active');
+			saveByClose = true;
+		// if close on settings with cookie
+		} else if (Cookies.get(CACSP_COOKIE_NAME)) {
+			jQuery('.modal-cacsp-box.modal-cacsp-box-settings').removeClass('modal-cacsp-box-show');
+			jQuery('html, body').removeClass('modal-cacsp-open');
+		// fallback
+		} else {
+			saveByClose = true;
+		}
+		if ( saveByClose == true ) {
+			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn.modal-cacsp-btn-save').trigger('click');
+		}
+		return false;
+	});
 }
 
 /* Open the settings modal */
@@ -52,8 +78,8 @@ function openCookiesAndContentPolicySettings(link) {
 	jQuery('.modal-cacsp-box.modal-cacsp-box-settings').addClass('modal-cacsp-box-show');
 	jQuery('html').removeClass('modal-cacsp-open-no-backdrop');
 	// Set the toggles according to the users settings
-	if (Cookies.get('cookies_and_content_security_policy')) {
-		cookie_filter = JSON.parse(Cookies.get('cookies_and_content_security_policy'));
+	if (Cookies.get(CACSP_COOKIE_NAME)) {
+		cookie_filter = JSON.parse(Cookies.get(CACSP_COOKIE_NAME));
 		if (cookie_filter) {
 			jQuery.each(cookie_filter, function( index, value ) {
 				jQuery('.modal-cacsp-box .modal-cacsp-box-settings-list ul li a[data-accepted-cookie=' + value + ']').addClass('modal-cacsp-toggle-switch-active');
@@ -65,7 +91,7 @@ function openCookiesAndContentPolicySettings(link) {
 
 /* Open the settings modal from link */
 function openCookiesAndContentPolicySettingsLink() {
-	jQuery('a[href$="#cookiesAndContentPolicySettings"]').click(function() {
+	jQuery('a[href$="#cookiesAndContentPolicySettings"]').on('click', function() {
 		openCookiesAndContentPolicySettings(true);
 		saveCookiesAndContentPolicySettings();
 		return false;
@@ -83,7 +109,7 @@ function openCookiesAndContentPolicySettingsHash() {
 
 /* Toggle switches */
 function cookiesAndContentPolicyToggleSwitches() {
-	jQuery('.modal-cacsp-toggle-switch').click(function() {
+	jQuery('.modal-cacsp-toggle-switch').on('click', function() {
 		if (!jQuery(this).hasClass('disabled')) {
 			jQuery(this).toggleClass('modal-cacsp-toggle-switch-active');
 		}
@@ -94,7 +120,7 @@ function cookiesAndContentPolicyToggleSwitches() {
 /* Save the settings buttons */
 function saveCookiesAndContentPolicySettings() {
 	if (!jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn').hasClass('js-modal-cacsp-btn-click')) {
-		jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn').click(function() {
+		jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn').on('click', function() {
 			jQuery('.modal-cacsp-box.modal-cacsp-box-settings .modal-cacsp-btns a.modal-cacsp-btn').addClass('js-modal-cacsp-btn-click');
 			if (jQuery(this).hasClass('modal-cacsp-btn-accept-all')) {
 				jQuery('.modal-cacsp-box .modal-cacsp-box-settings-list ul li a').addClass('modal-cacsp-toggle-switch-active');
@@ -111,7 +137,8 @@ function saveCookiesAndContentPolicySettings() {
 			} else {
 				secure = true;
 			}
-			Cookies.set('cookies_and_content_security_policy', JSON.stringify(acceptedCookies), { expires: 365, sameSite: 'Lax', secure: secure });
+			expires = parseInt(cacspMessages.cacspExpires);
+			Cookies.set(CACSP_COOKIE_NAME, JSON.stringify(acceptedCookies), { expires: expires, sameSite: 'Lax', secure: secure });
 			location.reload(true);
 	        return false;
 		});
@@ -120,8 +147,8 @@ function saveCookiesAndContentPolicySettings() {
 
 /* Check blocked iframes */
 function cookiesAndContentPolicyCheckBlockedIframe(iframe, adminEmail) {
-	if (Cookies.get('cookies_and_content_security_policy')) {
-		cookie_filter = JSON.parse(Cookies.get('cookies_and_content_security_policy'));
+	if (Cookies.get(CACSP_COOKIE_NAME)) {
+		cookie_filter = JSON.parse(Cookies.get(CACSP_COOKIE_NAME));
 		if (cookie_filter) {
 			cookie_filter_length = cookie_filter.length;
 		}
@@ -149,8 +176,8 @@ function cookiesAndContentPolicyCheckBlockedIframe(iframe, adminEmail) {
 
 /* Check blocked objects */
 function cookiesAndContentPolicyCheckBlockedObject(object, adminEmail) {
-	if (Cookies.get('cookies_and_content_security_policy')) {
-		cookie_filter = JSON.parse(Cookies.get('cookies_and_content_security_policy'));
+	if (Cookies.get(CACSP_COOKIE_NAME)) {
+		cookie_filter = JSON.parse(Cookies.get(CACSP_COOKIE_NAME));
 		if (cookie_filter) {
 			cookie_filter_length = cookie_filter.length;
 		}
@@ -269,8 +296,18 @@ function cookiesAndContentPolicyMatchHostname(domain, domainRule) {
 
 function cookiesAndContentPolicyGetHostname(url) {
 	if (url) {
-	    var m = url.match(/^(?:http:\/\/|www\.|https:\/\/|\/\/)([^\/]+)+/);
-	    return m ? m[0] : null;
+		locationProtocol = false;
+		if (url.startsWith("//")) {
+			url = location.protocol + url;
+			locationProtocol = true;
+		}
+		var a = new URL(url);
+		if (locationProtocol) {
+			domain = location.protocol + '//' + a.hostname;
+		} else {
+			domain = a.protocol + '//' + a.hostname;
+		}
+		return a.hostname ? domain : null;
     }
 }
 

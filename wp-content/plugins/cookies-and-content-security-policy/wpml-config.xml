@@ -12,6 +12,7 @@
         <key name="cacsp_option_text_experience_description"/>
         <key name="cacsp_option_text_marketing_header"/>
         <key name="cacsp_option_text_marketing_description"/>
+        <key name="cacsp_option_text_close"/>
         <key name="cacsp_option_settings_button"/>
         <key name="cacsp_option_accept_all_button"/>
         <key name="cacsp_option_refuse_button"/>

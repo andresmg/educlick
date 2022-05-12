@@ -27,7 +27,7 @@ function cacsp_settings_textarea_row( $header, $id, $value, $code = true, $examp
 }
 
 // Settings input table row
-function cacsp_settings_input_row( $header, $id, $value, $code = true, $example = '', $placeholder = '', $description = '' ) {
+function cacsp_settings_input_row( $header, $id, $value, $code = true, $example = '', $placeholder = '', $description = '', $type = 'text' ) {
 	if ( $code ) {
 		$code = ' code';
 	}
@@ -37,7 +37,7 @@ function cacsp_settings_input_row( $header, $id, $value, $code = true, $example 
 	$cacsp_settings_input_row = '<tr valign="top">
 		<th scope="row">' . $header . '</th>
 		<td>
-			<input name="' . $id . '" type="text" id="' . $id . '" value="' . $value . '" class="large-text' . $code . '" placeholder="' . esc_attr( $placeholder ) . '">';
+			<input name="' . $id . '" type="' . $type . '" id="' . $id . '" value="' . $value . '" class="large-text' . $code . '" placeholder="' . esc_attr( $placeholder ) . '">';
 			if ( $example ) {
 				$cacsp_settings_input_row .= '<small>' . __( 'Example:', 'cookies-and-content-security-policy' ) . '<br>' . $example . '</small>';
 			}

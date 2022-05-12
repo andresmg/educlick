@@ -3,7 +3,7 @@
 * Plugin Name: Cookies and Content Security Policy
 * Plugin URI: https://plugins.followmedarling.se/cookies-and-content-security-policy/
 * Description: Block cookies and unwanted external content by setting Content Security Policy. A modal will be shown on the front end to let the visitor choose what kind of resources to accept.
-* Version: 1.96
+* Version: 2.06
 * Author: Jonk @ Follow me Darling
 * Author URI: https://plugins.followmedarling.se/
 * Domain Path: /languages
@@ -12,7 +12,10 @@
 
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-load_plugin_textdomain( 'cookies-and-content-security-policy', false, basename( dirname( __FILE__ ) ) . '/languages' );
+add_action( 'init', 'cacsp_load_textdomain' );
+function cacsp_load_textdomain() {
+    load_plugin_textdomain( 'cookies-and-content-security-policy', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' ); 
+}
 
 $cookies_and_cacsp_dir = plugin_dir_path( __FILE__ );
 
@@ -33,7 +36,7 @@ function cacsp_check_activated() {
 }
 
 if ( !is_admin() && !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
-	add_action( 'wp_enqueue_scripts', 'enqueue_cacsp_front', 11 );
+	add_action( 'wp_enqueue_scripts', 'enqueue_cacsp_front', 10 );
 	function enqueue_cacsp_front() {
 		if ( cacsp_option_actived() ) {
 			if ( !get_cacsp_options( 'cacsp_option_own_style' ) ) {
@@ -41,16 +44,16 @@ if ( !is_admin() && !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
 					'cookies-and-content-security-policy', 
 					plugins_url( 'css/cookies-and-content-security-policy.min.css', __FILE__ ),
 					array(),
-					get_plugin_version()
+					cacsp_get_plugin_version()
 				);
 				wp_enqueue_style( 'cookies-and-content-security-policy' );
 			}
 			if ( !get_cacsp_options( 'cacsp_option_own_js' ) ) {
 				wp_enqueue_script( 
 					'cookies-and-content-security-policy-cookie', 
-					plugins_url( 'js/js.cookie-2.2.1.min.js', __FILE__ ),
+					plugins_url( 'js/js.cookie.min.js', __FILE__ ),
 					array(), 
-					get_plugin_version(), 
+					cacsp_get_plugin_version(), 
 					true 
 				);
 				$cookies_and_cacsp_minified_js = true;
@@ -63,7 +66,7 @@ if ( !is_admin() && !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
 					'cookies-and-content-security-policy', 
 					plugins_url( $cookies_and_cacsp_js, __FILE__ ),
 					array( 'jquery' ), 
-					get_plugin_version(), 
+					cacsp_get_plugin_version(), 
 					true 
 				);
 				if ( !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
@@ -71,7 +74,7 @@ if ( !is_admin() && !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
 						'cookies-and-content-security-policy-error-message', 
 						plugins_url( 'js/cookies-and-content-security-policy-error-message.php', __FILE__ ),
 						array( 'jquery', 'cookies-and-content-security-policy' ), 
-						get_plugin_version() . '&rnd=' . md5( uniqid( rand(), true) ), 
+						cacsp_get_plugin_version() . '&rnd=' . md5( uniqid( rand(), true) ), 
 						true 
 					);
 				}
@@ -80,6 +83,8 @@ if ( !is_admin() && !get_cacsp_options( 'cacsp_option_only_csp' ) ) {
 					'cacspReviewSettingsButton' => __( get_cacsp_options( 'cacsp_review_settings_button', true, __( 'Review your settings', 'cookies-and-content-security-policy' ), true ), 'cacspMessages'),
 					'cacspNotAllowedDescription' => __( get_cacsp_options( 'cacsp_not_allowed_description', true, __( 'The content can\'t be loaded, since it is not allowed on the site.', 'cookies-and-content-security-policy' ), true ), 'cacspMessages'),
 					'cacspNotAllowedButton' => __( get_cacsp_options( 'cacsp_not_allowed_button', true, __( 'Contact the administrator', 'cookies-and-content-security-policy' ), true ), 'cacspMessages'),
+					'cacspExpires' => __( get_cacsp_options( 'cacsp_option_settings_expire', true, '365', true ), 'cacspMessages'),
+					'cacspWpEngineCompatibilityMode' => get_cacsp_options( 'cacsp_option_wpengine_compatibility_mode', false, '' ),
 				);
 				wp_localize_script('cookies-and-content-security-policy', 'cacspMessages', $array);
 			}
@@ -272,6 +277,14 @@ function body_class_cacsp_front( $classes ) {
 	return $classes;
 }
 
+add_action( 'send_headers', 'send_headers_cacsp' );
+function send_headers_cacsp() {
+	$wpEngineCompatibilityMode = get_cacsp_options( 'cacsp_option_wpengine_compatibility_mode', false, '' );
+	if ( $wpEngineCompatibilityMode === '1' ) {
+		header( 'Vary: X-WPENGINE-SEGMENT' );
+	}
+};
+
 if ( is_admin() ) {
 	add_action( 'admin_enqueue_scripts', 'enqueue_cacsp_back' );
 	function enqueue_cacsp_back() {
@@ -279,7 +292,7 @@ if ( is_admin() ) {
 			'cookies-and-content-security-policy-admin', 
 			plugins_url( 'css/cookies-and-content-security-policy-admin.min.css', __FILE__ ), 
 			array(), 
-			get_plugin_version()
+			cacsp_get_plugin_version()
 		);
 		wp_enqueue_style( 'cookies-and-content-security-policy-admin' );
 		wp_enqueue_script( 'wp-color-picker' );
@@ -339,9 +352,14 @@ function cacsp_option_actived() {
 	return $cacsp_option_actived;
 }
 
-function get_plugin_version() {
+function cacsp_get_plugin_version() {
 	$plugin_version = get_file_data( __FILE__, array( 'Version' => 'Version' ), false )['Version'];
 	return esc_attr( $plugin_version );
+}
+
+function cacsp_get_protocol() {
+	$protocol = ( !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443 ) ? "https://" : "http://";
+	return $protocol;
 }
 
 include_once( $cookies_and_cacsp_dir . 'inc/set-cacsp.php' );
@@ -349,3 +367,5 @@ include_once( $cookies_and_cacsp_dir . 'inc/set-cacsp.php' );
 include_once( $cookies_and_cacsp_dir . 'inc/settings-cacsp.php' );
 
 include_once( $cookies_and_cacsp_dir . 'inc/modal-cacsp.php' );
+
+include_once( $cookies_and_cacsp_dir . 'inc/plugin-compability.php' );

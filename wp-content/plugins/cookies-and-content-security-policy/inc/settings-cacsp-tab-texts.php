@@ -49,6 +49,7 @@ $cacsp_option_settings_button = get_cacsp_options( 'cacsp_option_settings_button
 $cacsp_option_refuse_button = get_cacsp_options( 'cacsp_option_refuse_button', false, '', true );
 $cacsp_option_accept_all_button = get_cacsp_options( 'cacsp_option_accept_all_button', false, '', true );
 $cacsp_option_save_button = get_cacsp_options( 'cacsp_option_save_button', false, '', true );
+$cacsp_option_text_close = get_cacsp_options( 'cacsp_option_text_close', false, '', true );
 $cacsp_review_settings_description = get_cacsp_options( 'cacsp_review_settings_description', false, '', true );
 $cacsp_review_settings_button = get_cacsp_options( 'cacsp_review_settings_button', false, '', true );
 $cacsp_not_allowed_description = get_cacsp_options( 'cacsp_not_allowed_description', false, '', true );
@@ -72,6 +73,7 @@ $cacsp_not_allowed_button = get_cacsp_options( 'cacsp_not_allowed_button', false
 	<?php echo cacsp_settings_input_row( __('Refuse button', 'cookies-and-content-security-policy', false ), 'cacsp_option_refuse_button', $cacsp_option_refuse_button, false, '', __( 'Refuse all', 'cookies-and-content-security-policy' ) ); ?>
 	<?php echo cacsp_settings_input_row( __('Accept all button', 'cookies-and-content-security-policy', false ), 'cacsp_option_accept_all_button', $cacsp_option_accept_all_button, false, '', __( 'Accept all', 'cookies-and-content-security-policy' ) ); ?>
 	<?php echo cacsp_settings_input_row( __('Save button', 'cookies-and-content-security-policy', false ), 'cacsp_option_save_button', $cacsp_option_save_button, false, '', __( 'Save', 'cookies-and-content-security-policy' ) ); ?>
+	<?php echo cacsp_settings_input_row( __('Close button', 'cookies-and-content-security-policy', false ), 'cacsp_option_text_close', $cacsp_option_text_close, false, '', __( 'Close', 'cookies-and-content-security-policy' ) ); ?>
 	<?php echo cacsp_settings_textarea_row( __('Review your settings text', 'cookies-and-content-security-policy', false ), 'cacsp_review_settings_description', $cacsp_review_settings_description, false, '', __( 'Your settings may be preventing you from seeing this content. Most likely you have Experience turned off.', 'cookies-and-content-security-policy' ) ); ?>
 	<?php echo cacsp_settings_input_row( __('Review your settings button', 'cookies-and-content-security-policy', false ), 'cacsp_review_settings_button', $cacsp_review_settings_button, false, '', __( 'Review your settings', 'cookies-and-content-security-policy' ) ); ?>
 	<?php echo cacsp_settings_textarea_row( __('Content not allowed text', 'cookies-and-content-security-policy', false ), 'cacsp_not_allowed_description', $cacsp_not_allowed_description, false, '', __( 'The content can\'t be loaded, since it is not allowed on the site.', 'cookies-and-content-security-policy' ) ); ?>

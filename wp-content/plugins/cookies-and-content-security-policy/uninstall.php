@@ -55,6 +55,7 @@ $cacsp_options = array(
 	'cacsp_option_grandma', 
 	'cacsp_option_refuse_button', 
 	'cacsp_option_show_refuse_button', 
+	'cacsp_option_settings_close_button', 
 	'cacsp_option_forms', 
 	'cacsp_option_worker', 
 	'cacsp_option_blob', 
@@ -84,6 +85,8 @@ $cacsp_options = array(
 	'cacsp_option_color_accept_button', 
 	'cacsp_option_color_accept_button_border', 
 	'cacsp_option_color_accept_button_text', 
+	'cacsp_option_settings_expire', 
+	'cacsp_option_wpengine_compatibility_mode', 
 );
 
 foreach ( $cacsp_options as $cacsp_option ) {

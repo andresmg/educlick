@@ -41,14 +41,33 @@ body.modal-cacsp-open {
 	.modal-cacsp-position {
 		width: 100%;
 		height: 100%;
+		> .modal-cacsp-box-close {
+			color: $white;
+			text-decoration: none;
+			position: fixed;
+			right: 0;
+			top: 0;
+			margin: 15px;
+			@include responsive(width-max-small-down) {
+				margin: 0;
+				position: absolute;
+				margin-top: -5px;
+			}
+			padding: 0 8px;
+			font-size: 2em;
+			@include transition(opacity, .2s);
+			&:hover {
+				opacity: .6;
+			}
+		}
 	}
 	&.modal-cacsp-open-no-backdrop {
 		.modal-cacsp-backdrop {
 			display: none;
 		}
 		.modal-cacsp-position {
-			width: 0;
 			height: 0;
+			padding: 0;
 		}
 	}
 }
@@ -77,6 +96,7 @@ body.modal-cacsp-open {
 	right: 0;
 	bottom: 0;
 	left: 0;
+	padding: 40px 0;
 	z-index: 999999;
 	overflow-y: auto;
 	outline: 0;
@@ -92,7 +112,6 @@ body.modal-cacsp-open {
 		> * {
 			background-color: $modal-bg;
 		}
-		//border-radius: .4rem;
 		border-radius: 6px;
 		@include transition(opacity, .4s);
 		&.modal-cacsp-box-show {
@@ -453,7 +472,7 @@ body.modal-cacsp-open {
 						position: absolute;
 						left: 0;
 						background-size: auto 100%;
-						margin-left: -260px;
+						margin-left: -270px;
 						@include responsive(width-max-small-down) {
 							background-image: none;
 						}

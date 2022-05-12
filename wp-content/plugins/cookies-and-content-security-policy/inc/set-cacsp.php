@@ -16,6 +16,7 @@ function set_content_security_policy() {
 	$cacsp_option_blob = get_cacsp_options( 'cacsp_option_blob' );
 	$cacsp_option_disable_unsafe_inline = get_cacsp_options( 'cacsp_option_disable_unsafe_inline' );
 	$cacsp_option_disable_unsafe_eval = get_cacsp_options( 'cacsp_option_disable_unsafe_eval' );
+	$cacsp_option_wpengine_compatibility_mode = get_cacsp_options( 'cacsp_option_wpengine_compatibility_mode' );
 	if ( $cacsp_option_debug ) {
 		$cacsp_option_debug_text .= '<!-- Setting Content Security Policy -->' . "\n";
 		$cacsp_option_debug_text .= '<!-- If you have saved your cookie settings and don\'t get a comment after this one saying that there is a cookie set your host is probably using cookie cache. Ask them to uncache cookies_and_content_security_policy. WP Engine is one of those hosts. -->' . "\n";	
@@ -23,14 +24,27 @@ function set_content_security_policy() {
 	$cacsp_bypass = 'false';
 	if ( isset( $_GET["cacsp_bypass"] ) ) {
 		$cacsp_bypass = $_GET["cacsp_bypass"];
+		$cacsp_bypass_cookie_value = '["statistics","experience","markerting"]';
 		$cacsp_option_debug_text .= '<!-- We are bypassing and accepting all -->' . "\n";
-		setcookie( 'cookies_and_content_security_policy', '["statistics","experience","markerting"]' );
+		setcookie( 'cookies_and_content_security_policy', $cacsp_bypass_cookie_value );
 	}
-	if ( isset( $_COOKIE["cookies_and_content_security_policy"] ) ) {
-		if ( $cacsp_option_debug ) {
+	if ( isset( $_COOKIE["cookies_and_content_security_policy"] ) || isset($_SERVER["HTTP_X_WPENGINE_SEGMENT"]) || $cacsp_bypass == 'true' ) {		if ( $cacsp_option_debug ) {
 			$cacsp_option_debug_text .= '<!-- We have Content Security Policy Cookie set -->' . "\n";
 		}
-		$cookie_filter = str_replace( '\\', '', $_COOKIE['cookies_and_content_security_policy'] );
+		if ( $cacsp_bypass == 'true' ) {
+			$cookie_filter = $cacsp_bypass_cookie_value;
+		} else {
+			if ( $cacsp_option_wpengine_compatibility_mode === '1' ) {
+				if ( $cacsp_option_debug ) {
+					$cacsp_option_debug_text .= '<!-- Using WP Engine compatibility mode -->' . "\n";
+				}
+				if ( isset( $_SERVER["HTTP_X_WPENGINE_SEGMENT"] ) ) { 
+					$cookie_filter = urldecode(str_replace( '\\', '', $_SERVER["HTTP_X_WPENGINE_SEGMENT"]));
+				}
+			} else {
+				$cookie_filter = str_replace( '\\', '', $_COOKIE['cookies_and_content_security_policy'] );
+			}
+		}
 		if ( $cookie_filter ) {
 			if ( $cacsp_option_debug ) {
 				$cacsp_option_debug_text .= '<!-- We have a Content Security Policy Cookie settings saved -->' . "\n";

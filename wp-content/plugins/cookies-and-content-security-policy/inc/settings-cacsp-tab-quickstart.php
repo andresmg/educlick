@@ -16,14 +16,17 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 $cacsp_option_quickstart_google_analytics = intval( isset( $_POST['cacsp_option_quickstart_google_analytics'] ) );
 $cacsp_option_quickstart_google_tag_manager = intval( isset( $_POST['cacsp_option_quickstart_google_tag_manager'] ) );
 $cacsp_option_quickstart_google_optimize = intval( isset( $_POST['cacsp_option_quickstart_google_optimize'] ) );
+$cacsp_option_quickstart_google_ads = intval( isset( $_POST['cacsp_option_quickstart_google_ads'] ) );
 $cacsp_option_quickstart_google_ads_conversion = intval( isset( $_POST['cacsp_option_quickstart_google_ads_conversion'] ) );
 $cacsp_option_quickstart_google_ads_remarketing = intval( isset( $_POST['cacsp_option_quickstart_google_ads_remarketing'] ) );
 $cacsp_option_quickstart_linkedin_insight_tag = intval( isset( $_POST['cacsp_option_quickstart_linkedin_insight_tag'] ) );
+$cacsp_option_quickstart_divi = intval( isset( $_POST['cacsp_option_quickstart_divi'] ) );
 $cacsp_option_quickstart_facebook_pixel = intval( isset( $_POST['cacsp_option_quickstart_facebook_pixel'] ) );
 $cacsp_option_quickstart_hubspot = intval( isset( $_POST['cacsp_option_quickstart_hubspot'] ) );
 $cacsp_option_quickstart_hotjar = intval( isset( $_POST['cacsp_option_quickstart_hotjar'] ) );
 $cacsp_option_quickstart_google_maps = intval( isset( $_POST['cacsp_option_quickstart_google_maps'] ) );
 $cacsp_option_quickstart_google_translate = intval( isset( $_POST['cacsp_option_quickstart_google_translate'] ) );
+$cacsp_option_quickstart_google_docs = intval( isset( $_POST['cacsp_option_quickstart_google_translate'] ) );
 $cacsp_option_quickstart_youtube = intval( isset( $_POST['cacsp_option_quickstart_youtube'] ) );
 $cacsp_option_quickstart_vimeo = intval( isset( $_POST['cacsp_option_quickstart_vimeo'] ) );
 $cacsp_option_quickstart_spotify = intval( isset( $_POST['cacsp_option_quickstart_spotify'] ) );
@@ -33,6 +36,7 @@ $cacsp_option_quickstart_stripe = intval( isset( $_POST['cacsp_option_quickstart
 $cacsp_option_quickstart_paypal = intval( isset( $_POST['cacsp_option_quickstart_paypal'] ) );
 $cacsp_option_quickstart_recaptcha = intval( isset( $_POST['cacsp_option_quickstart_recaptcha'] ) );
 $cacsp_option_quickstart_gravatar = intval( isset( $_POST['cacsp_option_quickstart_gravatar'] ) );
+$cacsp_option_quickstart_instagram = intval( isset( $_POST['cacsp_option_quickstart_instagram'] ) );
 $cacsp_option_quickstart_soundcloud = intval( isset( $_POST['cacsp_option_quickstart_soundcloud'] ) );
 $cacsp_option_quickstart_calendly = intval( isset( $_POST['cacsp_option_quickstart_calendly'] ) );
 $cacsp_option_quickstart_jetpack = intval( isset( $_POST['cacsp_option_quickstart_jetpack'] ) );
@@ -75,6 +79,17 @@ $cacsp_option_quickstart_overwrite = intval( isset( $_POST['cacsp_option_quickst
 			} ?>
 			<input type="checkbox" name="cacsp_option_quickstart_google_optimize" id="cacsp_option_quickstart_google_optimize" value="1"<?php echo $checked; ?>> 
 				<?php _e( 'Google Optimize', 'cookies-and-content-security-policy' ); ?>
+		</label>
+	</li>
+	<li>
+		<label for="cacsp_option_quickstart_google_ads">
+			<?php if ( $cacsp_option_quickstart_google_ads ) {
+				$checked = ' checked';
+			} else {
+				$checked = '';
+			} ?>
+			<input type="checkbox" name="cacsp_option_quickstart_google_ads" id="cacsp_option_quickstart_google_ads" value="1"<?php echo $checked; ?>> 
+				<?php _e( 'Google Ads', 'cookies-and-content-security-policy' ); ?>
 		</label>
 	</li>
 	<li>
@@ -122,6 +137,17 @@ $cacsp_option_quickstart_overwrite = intval( isset( $_POST['cacsp_option_quickst
 		</label>
 	</li>
 	<li>
+		<label for="cacsp_option_quickstart_google_docs">
+			<?php if ( $cacsp_option_quickstart_google_docs ) {
+				$checked = ' checked';
+			} else {
+				$checked = '';
+			} ?>
+			<input type="checkbox" name="cacsp_option_quickstart_google_docs" id="cacsp_option_quickstart_google_docs" value="1"<?php echo $checked; ?>> 
+				<?php _e( 'Google Docs', 'cookies-and-content-security-policy' ); ?>
+		</label>
+	</li>
+	<li>
 		<h4><?php _e( 'Social networks', 'cookies-and-content-security-policy' ); ?></h4>
 	</li>
 	<li>
@@ -155,6 +181,20 @@ $cacsp_option_quickstart_overwrite = intval( isset( $_POST['cacsp_option_quickst
 			} ?>
 			<input type="checkbox" name="cacsp_option_quickstart_twitter" id="cacsp_option_quickstart_twitter" value="1"<?php echo $checked; ?>> 
 				<?php _e( 'Twitter', 'cookies-and-content-security-policy' ); ?>
+		</label>
+	</li>
+	<li>
+		<h4><?php _e( 'Page builders', 'cookies-and-content-security-policy' ); ?></h4>
+	</li>
+	<li>
+		<label for="cacsp_option_quickstart_divi">
+			<?php if ( $cacsp_option_quickstart_divi ) {
+				$checked = ' checked';
+			} else {
+				$checked = '';
+			} ?>
+			<input type="checkbox" name="cacsp_option_quickstart_divi" id="cacsp_option_quickstart_divi" value="1"<?php echo $checked; ?>> 
+				<?php _e( 'Divi', 'cookies-and-content-security-policy' ); ?>
 		</label>
 	</li>
 	<li>
@@ -266,6 +306,17 @@ $cacsp_option_quickstart_overwrite = intval( isset( $_POST['cacsp_option_quickst
 			} ?>
 			<input type="checkbox" name="cacsp_option_quickstart_gravatar" id="cacsp_option_quickstart_gravatar" value="1"<?php echo $checked; ?>> 
 				<?php _e( 'Gravatar', 'cookies-and-content-security-policy' ); ?>
+		</label>
+	</li>
+	<li>
+		<label for="cacsp_option_quickstart_instagram">
+			<?php if ( $cacsp_option_quickstart_instagram ) {
+				$checked = ' checked';
+			} else {
+				$checked = '';
+			} ?>
+			<input type="checkbox" name="cacsp_option_quickstart_instagram" id="cacsp_option_quickstart_instagram" value="1"<?php echo $checked; ?>> 
+				<?php _e( 'Instagram', 'cookies-and-content-security-policy' ); ?>
 		</label>
 	</li>
 	<li>

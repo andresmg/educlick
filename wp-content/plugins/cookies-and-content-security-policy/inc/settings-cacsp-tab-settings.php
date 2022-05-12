@@ -18,6 +18,7 @@ $cacsp_option_allow_use_site = get_cacsp_options( 'cacsp_option_allow_use_site',
 $cacsp_option_hide_unused_settings_row = get_cacsp_options( 'cacsp_option_hide_unused_settings_row', false, '', true );
 $cacsp_option_grandma = get_cacsp_options( 'cacsp_option_grandma', false, '', true );
 $cacsp_option_show_refuse_button = get_cacsp_options( 'cacsp_option_show_refuse_button', false, '', true );
+$cacsp_option_settings_close_button = get_cacsp_options( 'cacsp_option_settings_close_button', false, '', true );
 $cacsp_option_forms = get_cacsp_options( 'cacsp_option_forms', false, '', true );
 $cacsp_option_worker = get_cacsp_options( 'cacsp_option_worker', false, '', true );
 $cacsp_option_blob = get_cacsp_options( 'cacsp_option_blob', false, '', true );
@@ -29,6 +30,8 @@ $cacsp_option_no_x_csp = get_cacsp_options( 'cacsp_option_no_x_csp', false, '', 
 $cacsp_option_settings_policy_link = get_cacsp_options( 'cacsp_option_settings_policy_link', false, '', true );
 $cacsp_option_settings_policy_link_url = get_cacsp_options( 'cacsp_option_settings_policy_link_url', false, '', true );
 $cacsp_option_settings_policy_link_target = get_cacsp_options( 'cacsp_option_settings_policy_link_target', false, '', true );
+$cacsp_option_settings_expire = get_cacsp_options( 'cacsp_option_settings_expire', true, '365', true );
+$cacsp_option_wpengine_compatibility_mode = get_cacsp_options( 'cacsp_option_wpengine_compatibility_mode', false, '', true );
 ?>
 <h2><?php _e( 'Settings', 'cookies-and-content-security-policy' ); ?></h2>
 <table class="form-table">
@@ -104,6 +107,16 @@ $cacsp_option_settings_policy_link_target = get_cacsp_options( 'cacsp_option_set
 					} ?>
 					<input type="checkbox" name="cacsp_option_show_refuse_button" id="cacsp_option_show_refuse_button" value="1"<?php echo $checked; ?>> 
 						<?php _e( 'Show refuse cookies button.', 'cookies-and-content-security-policy' ); ?>
+				</label>
+				<br>
+				<label for="cacsp_option_settings_close_button">
+					<?php if ( $cacsp_option_settings_close_button ) {
+						$checked = ' checked';
+					} else {
+						$checked = '';
+					} ?>
+					<input type="checkbox" name="cacsp_option_settings_close_button" id="cacsp_option_settings_close_button" value="1"<?php echo $checked; ?>> 
+						<?php _e( 'Show close button (&times;).', 'cookies-and-content-security-policy' ); ?>
 				</label>
 			</fieldset>
 		</td>
@@ -227,6 +240,18 @@ $cacsp_option_settings_policy_link_target = get_cacsp_options( 'cacsp_option_set
 					<input type="checkbox" name="cacsp_option_no_x_csp" id="cacsp_option_no_x_csp" value="1"<?php echo $checked; ?>> 
 						<?php _e( 'Disable X-Content-Security-Policy.', 'cookies-and-content-security-policy' ); ?>
 				</label>
+				<br>
+				<label for="cacsp_option_wpengine_compatibility_mode">
+					<?php if ( $cacsp_option_wpengine_compatibility_mode ) {
+						$checked = ' checked';
+					} else {
+						$checked = '';
+					} ?>
+					<input type="checkbox" name="cacsp_option_wpengine_compatibility_mode" id="cacsp_option_wpengine_compatibility_mode" value="1"<?php echo $checked; ?>> 
+						<?php _e( 'WP Engine compatibility mode', 'cookies-and-content-security-policy' ); ?>
+						<br>
+						<small><?php _e( 'Enabling this will use the <a href="https://wpengine.com/support/personalization-user-segmentation-page-cache/" target="_blank">User Cache Segmentation</a> to set the cookie, which will allow this plugin to work with WP Engine caching. <strong>Do not enable this setting if you are not on WP Engine.</strong>.', 'cookies-and-content-security-policy' ); ?></small>
+				</label>
 			</fieldset>
 		</td>
 	</tr>
@@ -268,6 +293,9 @@ $cacsp_option_settings_policy_link_target = get_cacsp_options( 'cacsp_option_set
 			</label>
 		</td>
 	</tr>
+	<?php
+	echo cacsp_settings_input_row( __('Cookie Expire', 'cookies-and-content-security-policy', false ), 'cacsp_option_settings_expire', $cacsp_option_settings_expire, false, false, __( 'Default: 365', 'cookies-and-content-security-policy' ), 'After how many days the accept cookie should expire.', 'number' ); 
+	?>
 	<tr>
 		<th scope="row">
 			<?php _e( 'How to link back to settings', 'cookies-and-content-security-policy' ); ?>

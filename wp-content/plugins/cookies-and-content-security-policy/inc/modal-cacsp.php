@@ -3,8 +3,13 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 if ( !get_cacsp_options( 'cacsp_option_only_csp' ) && !is_admin() ) {
 	add_action( 'wp_footer', 'modal_content_security_policy' );
-	function modal_content_security_policy(){
-		if ( cacsp_option_actived() ) {
+	function modal_content_security_policy() {
+		if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+			$block_editor = true;
+		} else {
+			$block_editor = false;
+		};
+		if ( cacsp_option_actived() && !$block_editor ) {
 			$cacsp_option_banner = get_cacsp_options( 'cacsp_option_banner' );
 			$cacsp_option_banner_class = '';
 			if ( $cacsp_option_banner ) {
@@ -14,6 +19,9 @@ if ( !get_cacsp_options( 'cacsp_option_only_csp' ) && !is_admin() ) {
 			<!--googleoff: index-->
 			<div class="modal-cacsp-backdrop"></div>
 			<div class="modal-cacsp-position">
+				<?php if ( get_cacsp_options( 'cacsp_option_settings_close_button' ) ) { ?>
+					<a href="#" class="modal-cacsp-box-close" title="<?php echo esc_attr( get_cacsp_options( 'cacsp_option_text_close', false, __( 'Close', 'cookies-and-content-security-policy' ) ) ); ?>">&times;</a>
+				<?php } ?>
 				<div class="modal-cacsp-box modal-cacsp-box-info<?php echo $cacsp_option_banner_class; ?>">
 					<div class="modal-cacsp-box-header">
 						<?php echo get_cacsp_options( 'cacsp_option_text_header', false, __( 'Cookies', 'cookies-and-content-security-policy' ) ); ?>

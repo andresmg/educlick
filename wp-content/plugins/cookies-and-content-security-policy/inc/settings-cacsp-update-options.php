@@ -97,6 +97,53 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 		), false );
     }
 
+	// Google ads
+	if ( intval( isset( $_POST['cacsp_option_quickstart_google_ads'] ) ) ) {
+    	$cacsp_option_old = get_option( 'cacsp_option_markerting_scripts' );
+		update_option( 'cacsp_option_markerting_scripts', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://*.googlesyndication.com/', 'cacsp_option_statistics_scripts' ) . 
+			cacsp_check_existing_domain( 'https://partner.googleadservices.com/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.ca/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.co.in/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.co.kr/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.co.uk/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.co.za/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.ar/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.au/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.br/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.co/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.gt/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.mx/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.pe/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.ph/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.pk/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.tr/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.tw/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.com.vn/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.de/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.dk/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.es/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.fr/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.nl/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.no/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.ru/', 'cacsp_option_markerting_scripts' ) . 
+			cacsp_check_existing_domain( 'https://adservice.google.vg/', 'cacsp_option_markerting_scripts' )
+		), false );
+		$cacsp_option_old = get_option( 'cacsp_option_markerting_images' );
+		update_option( 'cacsp_option_markerting_images', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://*.googlesyndication.com/', 'cacsp_option_markerting_images' )
+		), false );
+		$cacsp_option_old = get_option( 'cacsp_option_markerting_frames' );
+		update_option( 'cacsp_option_markerting_frames', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://googleads.g.doubleclick.net/', 'cacsp_option_markerting_frames' ) . 
+			cacsp_check_existing_domain( 'https://tpc.googlesyndication.com/', 'cacsp_option_markerting_frames' ) 
+		), false );
+    }
+
     // Google Ads conversions
     if ( intval( isset( $_POST['cacsp_option_quickstart_google_ads_conversion'] ) ) ) {
     	$cacsp_option_old = get_option( 'cacsp_option_markerting_scripts' );
@@ -152,6 +199,17 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 			$cacsp_option_old . 
 			cacsp_check_existing_domain( 'https://px.ads.linkedin.com/', 'cacsp_option_markerting_images' ), 
 			cacsp_check_existing_domain( 'https://www.linkedin.com/', 'cacsp_option_markerting_images' ) 
+		), false );
+    }
+
+	// Divi
+	if ( intval( isset( $_POST['cacsp_option_quickstart_divi'] ) ) ) {
+    	$cacsp_option_old = get_option( 'cacsp_option_always_frames' );
+		update_option( 'cacsp_option_always_frames', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://elegantthemes.com/', 'cacsp_option_always_frames' ) . 
+			cacsp_check_existing_domain( 'https://*.elegantthemes.com/', 'cacsp_option_always_frames' ) . 
+			cacsp_check_existing_domain( cacsp_get_protocol() . $_SERVER['HTTP_HOST'] . '/', 'cacsp_option_always_frames' ) 
 		), false );
     }
 
@@ -271,8 +329,23 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 		), false );
     }
 
+	// Google Docs
+    if ( intval( isset( $_POST['cacsp_option_quickstart_google_docs'] ) ) ) {
+		$cacsp_option_old = get_option( 'cacsp_option_experience_frames' );
+		update_option( 'cacsp_option_experience_frames', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://docs.google.com/', 'cacsp_option_experience_frames' )
+		), false );
+    }
+
     // YouTube
     if ( intval( isset( $_POST['cacsp_option_quickstart_youtube'] ) ) ) {
+		$cacsp_option_old = get_option( 'cacsp_option_experience_scripts' );
+		update_option( 'cacsp_option_experience_scripts', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://youtube.com/', 'cacsp_option_experience_scripts' ) . 
+			cacsp_check_existing_domain( 'https://*.youtube.com/', 'cacsp_option_experience_scripts' ) 
+		), false );
     	$cacsp_option_old = get_option( 'cacsp_option_experience_images' );
 		update_option( 'cacsp_option_experience_images', cacsp_sanitize_domains( 
 			$cacsp_option_old . 
@@ -281,7 +354,9 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 		$cacsp_option_old = get_option( 'cacsp_option_experience_frames' );
 		update_option( 'cacsp_option_experience_frames', cacsp_sanitize_domains( 
 			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://youtube.com/', 'cacsp_option_experience_frames' ) . 
 			cacsp_check_existing_domain( 'https://*.youtube.com/', 'cacsp_option_experience_frames' ) . 
+			cacsp_check_existing_domain( 'https://youtube-nocookie.com/', 'cacsp_option_experience_frames' ) . 
 			cacsp_check_existing_domain( 'https://*.youtube-nocookie.com/', 'cacsp_option_experience_frames' ) . 
 			cacsp_check_existing_domain( 'https://youtu.be/', 'cacsp_option_experience_frames' )
 		), false );
@@ -331,7 +406,7 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 		update_option( 'cacsp_option_experience_images', cacsp_sanitize_domains( 
 			$cacsp_option_old . 
 			cacsp_check_existing_domain( 'https://*.twimg.com/', 'cacsp_option_experience_images' ) . 
-			cacsp_check_existing_domain( 'https://platform.twitter.com/', 'cacsp_option_experience_images' )
+			cacsp_check_existing_domain( 'https://*.twitter.com/', 'cacsp_option_experience_images' )
 		), false );
 		$cacsp_option_old = get_option( 'cacsp_option_experience_frames' );
 		update_option( 'cacsp_option_experience_frames', cacsp_sanitize_domains( 
@@ -397,6 +472,15 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 		update_option( 'cacsp_option_experience_images', cacsp_sanitize_domains( 
 			$cacsp_option_old . 
 			cacsp_check_existing_domain( 'https://secure.gravatar.com/', 'cacsp_option_experience_images' ) 
+		), false );
+    }
+
+	// Instagram
+    if ( intval( isset( $_POST['cacsp_option_quickstart_instagram'] ) ) ) {
+		$cacsp_option_old = get_option( 'cacsp_option_experience_images' );
+		update_option( 'cacsp_option_experience_images', cacsp_sanitize_domains( 
+			$cacsp_option_old . 
+			cacsp_check_existing_domain( 'https://*.cdninstagram.com/', 'cacsp_option_experience_images' ) 
 		), false );
     }
 
@@ -501,6 +585,7 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 	update_option( 'cacsp_option_refuse_button', cacsp_sanitize_text_field_with_html( $_POST['cacsp_option_refuse_button'] ) );
 	update_option( 'cacsp_option_accept_all_button', cacsp_sanitize_text_field_with_html( $_POST['cacsp_option_accept_all_button'] ) );
 	update_option( 'cacsp_option_save_button', cacsp_sanitize_text_field_with_html( $_POST['cacsp_option_save_button'] ) );
+	update_option( 'cacsp_option_text_close', cacsp_sanitize_text_field_with_html( $_POST['cacsp_option_text_close'] ) );
 	update_option( 'cacsp_review_settings_description', cacsp_sanitize_text_field_with_html( $_POST['cacsp_review_settings_description'] ) );
 	update_option( 'cacsp_review_settings_button', cacsp_sanitize_text_field_with_html( $_POST['cacsp_review_settings_button'] ) );
 	update_option( 'cacsp_not_allowed_description', cacsp_sanitize_text_field_with_html( $_POST['cacsp_not_allowed_description'] ) );
@@ -518,6 +603,7 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 	update_option( 'cacsp_option_grandma', intval( isset( $_POST['cacsp_option_grandma'] ) ) );
 	update_option( 'cacsp_option_hide_unused_settings_row', intval( isset( $_POST['cacsp_option_hide_unused_settings_row'] ) ) );
 	update_option( 'cacsp_option_show_refuse_button', intval( isset( $_POST['cacsp_option_show_refuse_button'] ) ) );
+	update_option( 'cacsp_option_settings_close_button', intval( isset( $_POST['cacsp_option_settings_close_button'] ) ) );
 	update_option( 'cacsp_option_forms', intval( isset( $_POST['cacsp_option_forms'] ) ) );
 	update_option( 'cacsp_option_worker', intval( isset( $_POST['cacsp_option_worker'] ) ) );
 	update_option( 'cacsp_option_blob', intval( isset( $_POST['cacsp_option_blob'] ) ) );
@@ -529,9 +615,11 @@ elseif ( isset( $_POST['save_cacsp_settings_quickstart'] ) && $can_change_all ) 
 	update_option( 'cacsp_option_settings_policy_link', intval( $_POST['cacsp_option_settings_policy_link'] ) );
 	update_option( 'cacsp_option_settings_policy_link_url', cacsp_sanitize_domains( $_POST['cacsp_option_settings_policy_link_url'], false ) );
 	update_option( 'cacsp_option_settings_policy_link_target', intval( isset( $_POST['cacsp_option_settings_policy_link_target'] ) ) );
+	update_option( 'cacsp_option_wpengine_compatibility_mode', intval( isset( $_POST['cacsp_option_wpengine_compatibility_mode'] ) ));
 	echo '<div id="message" class="updated fade">
 		<p>' . __( 'Your settings are now updated', 'cookies-and-content-security-policy' ) . '</p>
 	</div>';
+	update_option( 'cacsp_option_settings_expire', intval( $_POST['cacsp_option_settings_expire'] ) );
 } elseif ( isset( $_POST['save_cacsp_settings_colors'] ) && $can_change_all ) {
 	update_option( 'cacsp_option_color_backdrop', sanitize_hex_color( $_POST['cacsp_option_color_backdrop'] ) );
 	update_option( 'cacsp_option_color_modal_bg', sanitize_hex_color( $_POST['cacsp_option_color_modal_bg'] ) );

@@ -3,9 +3,9 @@ Contributors: jonkastonka
 Donate link: https://www.paypal.com/donate/?hosted_button_id=86UYSXNUA2LHY
 Tags: cookie, cookies, cookie bar, cookie compliance, third-party cookies, gdpr, ccpa, csp, content security policy, modal, security, translatable
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 7.0
-Stable tag: 1.96
+Stable tag: 2.06
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,11 +16,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Block cookies and unwanted external content by setting Content Security Policy. A modal will be shown on the front end to let the visitor choose what kind of resources to accept. It also adds a layer of security for your site since iframes, scripts and images from unknown domains are blocked.
 
 **Multilingual** support through [WPML](https://wpml.org/), [Polylang](https://polylang.pro/) or probably any multilingual plugin out there since this plugin follows WordPress Coding Standards. See FAQ below on how to translate with WPML or Polylang.
-
-== New: Quickstart ==
  
-**New since version 1.57:** Quickstart, choose common resources from a list that are automatically added to your Domains list. So, it's even easier to set it up! Check, check, check and check!
+**Quickstart:** Choose common resources from a list that are automatically added to your Domains list. So, it's even easier to set it up! Check, check, check and check!
 Updated regularly.
+
+== Free stickers for translators! ==
+
+**Since we want this plugin to be available in as many languages as possible, I will send you a handful of the new [super cool stickers](https://plugins.followmedarling.se/2022/02/stickers-are-in-the-house/) if you translate the plugin!** 
+Just translate the plugin to your language, and when it is approved, [comment this post](https://plugins.followmedarling.se/2022/02/stickers-are-in-the-house/#respond) and I'll send it to you, totally free! 
+If you have already translated the plugin and want stickers, of course that counts too! Just comment the post.
 
 == Installation ==
  
@@ -42,37 +46,46 @@ Yes, if you set it up right.
 
 = How do I know what resources are used on my site? =
  
-After install, open a console (see screenshot 13) and see what is blocked by Content Security Policy. Then just go to the settings and white list all domains you want to accept.
+After install, open a console (see screenshot 13) and see what is blocked by Content Security Policy. Then just go to WP Admin > Settings > Cookies and Content Security Policy > Domains and add the domains you want to allow. Or you can take a look at WP Admin > Settings > Cookies and Content Security Policy > Quickstart, and see if the resource you want to use is there.
+
+= How do I manually domains to allow? =
+ 
+After install, open a console (see screenshot 13) and see what is blocked by Content Security Policy. If you get the error message:  `Refused to load the script 'https://domain.com/some-script.js' because it violates the following Content Security Policy directive: "script-src [...]` in the console, you should add `https://domain.com/` to Script, since `https://domain.com/` is the domain of the URL that caused the error, and `script-src` is the directive. If it is Always allow, Statistics, Experience or Marketing is up to you.
 
 = The settings does not seem to have an effect. What do I do? =
 
 There are three scenarios where this can happen:
 
-* In some cases cookies are cached. It could be your hosting (for example WP Engine does this), then just contact them and ask them to uncache the cookies_and_content_security_policy cookie.
-* In other cases it could be your cache plugin (for example Litespeed cache does this), then just review your settings. In the case of Litespeed cache, go to Cache/Excludes and exclude cookies_and_content_security_policy.
+* In some cases cookies are cached. It could be your hosting (for example WP Engine does this), then just contact them and ask them to uncache the cookies_and_content_security_policy cookie, or you can check "WP Engine compatibility mode" under Settings. 
+* In other cases it could be your cache plugin (for example Litespeed cache does this), then just review your settings. Read more in the next question in the FAQ that is all about cache plugins.
 * If you're using static page cache that doesn't go through php, go to Settings > Cookies and Content Security Policy > Settings and check Use meta under Advanced settings.
+
+= I'm using a cache plugin, and it seems to be interfere with this plugin =
+
+Review the settings of you cache plugin. 
+
+Examples: 
+
+* `Litespeed cache`, go to WP Admin > LiteSpeed Cache > Cache > Excludes, scroll down to "Do Not Cache Cookies" and enter `cookies_and_content_security_policy` and save your changes.
+* `Hummingbird`, go to WP Admin > Hummingbird > Caching, scroll down to "Exclusions" and in "Cookies" enter `cookies_and_content_security_policy` and save your changes.
+* `WP Fastest Cache`, go to WP Admin > WP Fastest Cache > Exclude, scroll down to "Exclude Cookies" and click "Add New Rule" and enter `cookies_and_content_security_policy` and save.
 
 = Can you show me some examples of sites using this plugin? =
 
 In English
 
-* https://oddoneout.se/en/ - Transladed strings in Polylang, works in the same way with WPML
-* https://draftitprivacy.com/ - Transladed strings in Polylang, works in the same way with WPML
+* https://eldvarm.com/
+* https://abliva.com/ - Transladed strings in Polylang, works in the same way with WPML
+* https://www.ascelia.com/ - Transladed strings in Polylang, works in the same way with WPML
 
 In Swedish
 
 * https://oddoneout.se/ - Transladed strings in Polylang, works in the same way with WPML
-* https://draftitprivacy.se/ - Transladed strings in Polylang, works in the same way with WPML
-* https://draftit.se/ - Multisite, also https://draftitskola.se/
 * https://expolon.se/ - Multisite, also https://expohr.se/
 * https://studiocanalis.se/
 * https://yogajona.se/
 * https://handelskammaren.com/
 * https://sydsvenskan.minibladet.se/ - Multisite https://minibladet.se/ for all sites
-
-In Norwegian
-
-* https://draftitprivacy.no/ - Transladed strings in Polylang, works in the same way with WPML
 
 = Is the plugin responsive? =
 
@@ -129,13 +142,14 @@ These have been tested:
 * Divi
 * Beaver Builder
 * WPBakery Page Builder
+* Elementor
 
 = I'm using a custom path in my WordPress setup and now the plugin doesn't work. What do I do? =
 
 This happens if you are using for example Bedrock by Roots.
 
-Go to the plugins folder, and in the folder *cookies-and-content-security-policy*, rename the file *cookies-and-content-security-policy-vars-sample.php* to *cookies-and-content-security-policy-vars.php* and save it to your plugins folder. After that, change this line:
-*$wp_load_path = '/your/custom/path/to/wp-load.php';* so that the path reflects your server path to wp-load.php. The value can also be relative, like *../../../../wp-load.php*.
+Go to the plugins folder, and in the folder *cookies-and-content-security-policy*, rename the file *cookies-and-content-security-policy-vars-sample.php* to *cookies-and-content-security-policy-vars.php* and save it to your plugins root folder (/plugins/). After that, change this line:
+*$wp_load_path = '/your/custom/path/to/wp-load.php';* so that the path reflects your server path to wp-load.php. The value can also be relative, like *../../../../wp/wp-load.php*.
 
 == Screenshots ==
  
@@ -166,6 +180,67 @@ Go to the plugins folder, and in the folder *cookies-and-content-security-policy
 13. Look in console to see what is blocked. In this case you'd probably like to add https://platform.twitter.com/ to Experience > Script. Or just use Quickstart and choose Twitter.
  
 == Changelog ==
+
+= 2.06 =
+
+* Quickstart for Divi
+* Translation template update
+
+= 2.05 =
+
+* Support for custom WP Engine header, found in Settings. Thanks @khromov for adding this!
+* Tell WP Super Cache (if used) to cache requests with the cookie "Cookies and Content Security Policy" separately from other visitors. Thanks @mikewpdev for the suggestion and pointers!
+* Enqueue css earlier for easier overwrite in themes
+* Better support for Google Ads in Quickstart
+
+= 2.04 =
+
+* Better Quickstart for YouTube
+* Bug fix for "Allow user to access site without saving settings" in Safari
+* Bug fix for "Possibility to add a close modal X" after closing modal scroll didn't appear
+
+= 2.03 =
+
+* Minor fixes in Readme
+* Quickstart for Instagram
+* Quickstart for Googlea Docs
+* Function get_plugin_version renamed to cacsp_get_plugin_version, to avoid possible conflicts
+* Possibility to add a close modal X to close the modal and refuse all unnecessary cookies, found in Settings
+* Bug fix for bypassing with ?cacsp_bypass=true
+
+= 2.02 =
+
+* Extra check added to make sure the modal or banner doesn't appear in the Widget block editor
+* Updated language files
+* Updated FAQ
+* Updated Support tab
+
+= 2.01 =
+
+* Bug in error message for framed domains under Always allowed fixed
+
+= 2.00 =
+
+* Not a major update, just the version number after 1.99 :)
+* Translation bug that gave the default site language in WP Admin for all users, fixed.
+* Possibility to change after how many days the accept cookie should expire. If you don't change it, the default is 365 days. The setting is found under Settings.
+
+= 1.99 =
+
+* Better URL match for error messages
+* Better Quickstart for Twitter images
+
+= 1.98 =
+
+* Add forgotten file
+
+= 1.97 =
+
+* Updated jQuery code from using [deprecated click()](https://github.com/jquery/jquery-migrate/blob/main/warnings.md#jqmigrate-jqueryfnclick-event-shorthand-is-deprecated)
+* Updated to latest [js-cookie](https://github.com/js-cookie)
+* Position of Grandma
+* Updated Readme with path example for Bedrock
+* Changed site_url() to home_url() in error message to get the right domain in error message function
 
 = 1.96 =
 
