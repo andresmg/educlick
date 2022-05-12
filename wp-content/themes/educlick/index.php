@@ -36,12 +36,12 @@ $brochure_pdf = get_field( 'brochure_pdf' );
                     ?>
                     <a
                     href="<?php echo $link ?>"
-                    class="col-5 Main__Home__card"
+                    class="col-6 Main__Home__card"
                     data-aos="fade-down"
                     data-aos-once="true"
                     data-aos-duration="1000"
                     data-aos-delay="<?php echo $delay ?>"
-                    style="background: #fff url(<?php echo $image['url'] ?>) no-repeat center / 18rem;"
+                    style="background: #fff url(<?php echo $image['url'] ?>) no-repeat center top / contain;"
                     >
                     </a>	
                   <?php $delay = $delay + 300; endwhile; ?>

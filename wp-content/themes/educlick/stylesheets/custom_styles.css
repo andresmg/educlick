@@ -144,8 +144,7 @@ h1.title.dark:before {
   }
   .Main__Home__card {
     height: 22rem;
-    background-size: 14rem !important;
-    background-position: left top !important;
+    background-size: 16rem !important;
   }
   .Main__Home .Rws {
     display: flex;
@@ -1392,6 +1391,10 @@ html {
   text-align: center;
   color: #333;
   font-weight: 400;
+}
+
+.Header .Tagline h1 {
+  font-size: 2rem;
 }
 
 .Header .Tagline p {

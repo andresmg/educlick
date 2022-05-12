@@ -45,7 +45,7 @@ $title = get_field( 'title' );
               $link = get_sub_field('link');
               ?>
               <div class="col-sm-6 col-12 iconic" style="background: url(<?php echo $icon['url'] ?>) no-repeat left center / contain;">
-                <a href="<?php echo $url ?>"><?php echo $info ?></a>
+                <a href="<?php echo $link ?>" target="_blank"><?php echo $info ?></a>
               </div>
             <?php endwhile; ?>
           <?php endif; ?>
