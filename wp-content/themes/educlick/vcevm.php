@@ -50,28 +50,28 @@ $table_body = get_field( 'table_body' );
         <div class="col-12 Main__Vce__icons">
           <div class="row justify-content-around">
           <?php if( have_rows('icons') ): ?>
-					<?php $delay=0; while( have_rows('icons') ): the_row(); 
-						// vars
-						$icon = get_sub_field('icon');
-						$icon_text = get_sub_field('icon_text');
-						$icon_file = get_sub_field('icon_file');
-						?>
-            <a
-              href="<?php echo $icon_file['url'] ?>"
-              class="col-sm-1 col-3 Main__Vce__icon icon dark"
-              data-aos="fade-up"
-              data-aos-once="true"
-              data-aos-duration="800"
-              data-aos-delay="<?php echo $delay ?>"
-            >
-              <img
-                src="<?php echo $icon['url'] ?>"
-                alt="<?php echo $icon_text ?>"
-              />
-              <h6><?php echo $icon_text ?></h6>
-            </a>
-					<?php $delay = $delay + 300; endwhile; ?>
-				<?php endif; ?>
+            <?php $delay=0; while( have_rows('icons') ): the_row(); 
+              // vars
+              $icon = get_sub_field('icon');
+              $icon_text = get_sub_field('icon_text');
+              $icon_file = get_sub_field('icon_file');
+              ?>
+              <a
+                href="<?php echo $icon_file['url'] ?>"
+                class="col-sm-1 col-3 Main__Vce__icon icon dark"
+                data-aos="fade-up"
+                data-aos-once="true"
+                data-aos-duration="800"
+                data-aos-delay="<?php echo $delay ?>"
+              >
+                <img
+                  src="<?php echo $icon['url'] ?>"
+                  alt="<?php echo $icon_text ?>"
+                />
+                <h6><?php echo $icon_text ?></h6>
+              </a>
+            <?php $delay = $delay + 300; endwhile; ?>
+          <?php endif; ?>
           </div>
         </div>
       </div>

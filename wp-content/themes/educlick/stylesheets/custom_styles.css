@@ -36,11 +36,11 @@ h1.title.light:before {
 }
 
 h1.title.dark {
-  color: #0083B7;
+  color: #0b6386;
 }
 
 h1.title.dark:before {
-  background-color: #0083B7;
+  background-color: #0b6386;
 }
 
 @media (max-width: 576px) {
@@ -429,7 +429,7 @@ h1.title.dark:before {
 }
 
 .Main__Vce__Table__Head {
-  background: #0083B7;
+  background: #0b6386;
   color: #fff;
   padding: 2rem;
 }
@@ -477,6 +477,10 @@ h1.title.dark:before {
   font-size: 1.2rem;
   text-align: center;
   transition: all 0.3s ease-in-out;
+}
+
+.Main__Vce__icon.dark h6 {
+  color: #0b6386;
 }
 
 .Main__Vce__Video {
@@ -831,11 +835,11 @@ h1.blue, h3.blue {
 }
 
 .Main__Includes__left h2.dark {
-  background: #0083B7;
+  background: #0b6386;
 }
 
 .Main__Includes__left h2.dark::before {
-  background: #0083B7;
+  background: #0b6386;
 }
 
 .Main__Includes__left h2.light {
@@ -1036,11 +1040,11 @@ h1.blue, h3.blue {
 }
 
 .Main__OurStory__Timeline [class*='col'].blue3 h4 {
-  color: #0083B7;
+  color: #0b6386;
 }
 
 .Main__OurStory__Timeline [class*='col'].blue3 h4:before {
-  background: #0083B7;
+  background: #0b6386;
 }
 
 .Main__OurStory__Timeline [class*='col'].blue4 h4 {
@@ -1271,7 +1275,7 @@ html {
 }
 
 .icon.dark h6 {
-  color: #0083B7;
+  color: #0b6386;
 }
 
 .icon.dark:before {
@@ -1279,7 +1283,7 @@ html {
 }
 
 .icon.dark:after {
-  color: #0083B7;
+  color: #0b6386;
 }
 
 .icon:before {
@@ -1339,7 +1343,7 @@ html {
 }
 
 .Button:hover {
-  background: #0083B7;
+  background: #0b6386;
   color: #fff;
 }
 
@@ -1356,7 +1360,7 @@ html {
 }
 
 .btn:hover, .wpcf7-submit:hover {
-  background: #0083B7;
+  background: #0b6386;
 }
 
 .wpcf7 form.invalid .wpcf7-response-output, .form.invalid {

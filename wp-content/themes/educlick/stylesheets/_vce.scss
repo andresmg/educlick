@@ -69,6 +69,12 @@
                 text-align: center;
                 transition: all 0.3s ease-in-out;
             }
+
+            &.dark {
+                h6 {
+                    color: $zane_blue_dark;
+                }
+            }
         }
 
         &__Video {
